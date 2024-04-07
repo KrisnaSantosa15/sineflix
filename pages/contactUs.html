@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>SineFlick</title>
+  </head>
+
+  <style>
+    .contact-us {
+      margin-top: 100px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .contact-us-content {
+      text-align: center;
+      width: 90%;
+    }
+
+    .contact-us-content h1 {
+      font-size: 3rem;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
+
+    .contact-us-content h3 {
+      font-size: 1.5rem;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
+
+    .subs-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .contact-us-text {
+      font-size: 1.5rem;
+      font-family: "Montserrat", sans-serif;
+      color: var(--comment-date);
+      width: 70%;
+      margin: 20px auto;
+    }
+
+    .contact-form {
+      flex-direction: column;
+      width: 70%;
+      margin: 20px auto;
+      text-align: start;
+    }
+
+    .form-group {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 20px;
+      margin: 10px 0;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: transparent;
+      color: #fff;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--comment-date);
+    }
+
+    .form-group label {
+      font-size: 1.2rem;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+      text-align: left;
+    }
+
+    .form-group textarea {
+      height: 200px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .contact-us-content h1 {
+        font-size: 2rem;
+      }
+
+      .contact-us-content h3 {
+        font-size: 1rem;
+      }
+
+      .contact-us-text {
+        font-size: 1rem;
+      }
+
+      .form-group label {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Navbar -->
+    <div class="container" style="height: auto">
+      <header class="header">
+        <div class="header-logo-container">
+          <img
+            src="/img/logo/logo-transparent.png"
+            class="header-logo"
+            alt="SineFlick"
+          />
+        </div>
+        <nav class="navBar">
+          <div class="open-btn" id="open">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="nav-items">
+            <ul class="list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/movies.html">Movies</a></li>
+              <li><a href="/pages/tvSeries.html">TV Series</a></li>
+              <li><a href="/pages/animatedMovies.html">Animated Movies</a></li>
+              <li><a href="/pages/myList.html">My List</a></li>
+              <div class="close-btn" id="close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </ul>
+            <div>
+              <ul class="user">
+                <li>
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    onclick="openSearch()"
+                  ></i>
+                </li>
+                <ul class="auth-btn">
+                  <li>
+                    <a href="/pages/signup.html" class="btn-2">Signup</a>
+                  </li>
+                  <li><a href="/pages/login.html" class="btn-1">Login</a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+              >×</span
+            >
+            <div class="overlay-content">
+              <form action="/pages/searchMovie.html" method="get">
+                <input
+                  type="text"
+                  name="query"
+                  id="searchInput"
+                  placeholder="Search.."
+                  onkeyup="getSearchSuggestions(this.value)"
+                />
+                <div id="searchSuggestions"></div>
+                <button
+                  type="submit"
+                  class="btn-1 search-button"
+                  style="border-radius: 0; height: auto"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- Contact us -->
+    <div class="contact-us">
+      <div class="contact-us-content">
+        <h1>Contact Us</h1>
+        <p class="contact-us-text">
+          If you have any questions or need help, feel free to contact us. We
+          are here to help you 24/7. Please fill out the form below.
+        </p>
+
+        <div class="contact-form">
+          <form action="mailto:krisnasantosa@upi.edu" method="post">
+            <div class="form-group form-group-1">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="form-group form-group-2">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group form-group-3">
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Enter your message"
+                required
+              ></textarea>
+            </div>
+            <div class="subs-btn">
+              <button
+                type="submit"
+                class="btn-1"
+                style="width: 250px; height: 50px"
+              >
+                Send A Message <i class="fa-regular fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- New releases -->
+    <div class="slider-container">
+      <div class="slider-content">
+        <h1>Just For You</h1>
+      </div>
+      <div class="owl-container">
+        <div id="owl-new-releases" class="owl-carousel owl-theme"></div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <div>
+          <img
+            src="/img/logo/logo-text.png"
+            class="footer-logo"
+            alt="SineFlick logo"
+          />
+          <p class="footer-text">
+            we provide the latest movies and TV shows for you, enjoy scrolling
+          </p>
+          <div class="contact-info">
+            <h3 class="footer-title">Contact Info</h3>
+            <ul class="footer-link">
+              <li>
+                <i class="fa fa-map-marker-alt"></i>
+                <span>Cibiru, Bandung</span>
+              </li>
+              <li>
+                <i class="fa fa-phone-alt"></i>
+                <span>+123-456-7890</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title">Useful Links</h3>
+          <ul class="footer-link">
+            <li><a href="/index.html">> Home</a></li>
+            <li><a href="/pages/movies.html">> Movies</a></li>
+            <li><a href="/pages/myList.html">> My List</a></li>
+            <li><a href="/pages/contactUs.html">> Contact Us</a></li>
+            <li><a href="/pages/about.html">> About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Our Services</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/services.html">Latest Movies</a></li>
+            <li><a href="/pages/services.html">24 Hours Services</a></li>
+            <li><a href="/pages/services.html">Free Access</a></li>
+            <li><a href="/pages/services.html">Access TV show</a></li>
+            <li><a href="/pages/services.html">Condition of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Categories</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/categories.html#action">> Action</a></li>
+            <li><a href="/pages/categories.html#comedy">> Comedy</a></li>
+            <li><a href="/pages/categories.html#crime">> Crime</a></li>
+            <li><a href="/pages/categories.html#sciFi">> Sci-Fi</a></li>
+            <li><a href="/pages/categories.html#thriller">> Thriller</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Support for you</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/help.html">Help Center</a></li>
+            <li><a href="/pages/support.html">Support</a></li>
+            <li><a href="/pages/faq.html">FAQ & Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

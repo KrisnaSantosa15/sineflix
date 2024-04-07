@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      .card {
+        background-color: #0b1118;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+      }
+
+      .login-container {
+        text-align: center;
+        width: 60%;
+        margin: auto;
+        padding: 20px;
+        background-color: #171b27;
+        border-radius: 20px;
+        color: #fff;
+      }
+
+      .login-form {
+        display: inline-block;
+        text-align: left;
+        width: 70%;
+      }
+
+      .login-title {
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .form-text {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .form-text a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .form-text a:hover {
+        text-decoration: underline;
+      }
+
+      button.btn-1 {
+        width: -moz-available;
+      }
+
+      @media screen and (max-width: 768px) {
+        .card {
+          flex-direction: column;
+        }
+
+        .login-container {
+          width: 80%;
+        }
+
+        .login-form {
+          width: 70%;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        .login-container {
+          width: 70%;
+        }
+
+        .login-form {
+          width: 60%;
+        }
+      }
+    </style>
+    <title>SineFlick</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container" style="height: auto">
+      <header class="header" style="position: relative">
+        <div class="header-logo-container">
+          <img
+            src="/img/logo/logo-transparent.png"
+            class="header-logo"
+            alt="SineFlick"
+          />
+        </div>
+        <nav class="navBar">
+          <div class="open-btn" id="open">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="nav-items">
+            <ul class="list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/movies.html">Movies</a></li>
+              <li><a href="/pages/tvSeries.html">TV Series</a></li>
+              <li><a href="/pages/animatedMovies.html">Animated Movies</a></li>
+              <li><a href="/pages/myList.html">My List</a></li>
+              <div class="close-btn" id="close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </ul>
+            <div>
+              <ul class="user">
+                <li>
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    onclick="openSearch()"
+                  ></i>
+                </li>
+                <ul class="auth-btn">
+                  <li>
+                    <a href="/pages/signup.html" class="btn-2">Signup</a>
+                  </li>
+                  <li><a href="/pages/login.html" class="btn-1">Login</a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+              >×</span
+            >
+            <div class="overlay-content">
+              <form action="/pages/searchMovie.html" method="get">
+                <input
+                  type="text"
+                  name="query"
+                  id="searchInput"
+                  placeholder="Search.."
+                  onkeyup="getSearchSuggestions(this.value)"
+                />
+                <div id="searchSuggestions"></div>
+                <button
+                  type="submit"
+                  class="btn-1 search-button"
+                  style="border-radius: 0; height: auto"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- Login Form -->
+    <div class="card">
+      <div class="login-container">
+        <div class="login-form login">
+          <h1 class="login-title" style="text-align: center">Login</h1>
+          <form action="/index.html">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-input"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group password">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-input"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <!-- show password checkbox -->
+            <div class="form-group">
+              <input type="checkbox" id="showPassword" />
+              <label for="showPassword">Show Password</label>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn-1">Login</button>
+            </div>
+            <div class="form-group">
+              <p class="form-text">
+                Don't have an account? <a href="/pages/signup.html">Signup</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <div>
+          <img
+            src="/img/logo/logo-text.png"
+            class="footer-logo"
+            alt="SineFlick logo"
+          />
+          <p class="footer-text">
+            we provide the latest movies and TV shows for you, enjoy scrolling
+          </p>
+          <div class="contact-info">
+            <h3 class="footer-title">Contact Info</h3>
+            <ul class="footer-link">
+              <li>
+                <i class="fa fa-map-marker-alt"></i>
+                <span>Cibiru, Bandung</span>
+              </li>
+              <li>
+                <i class="fa fa-phone-alt"></i>
+                <span>+123-456-7890</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title">Useful Links</h3>
+          <ul class="footer-link">
+            <li><a href="/index.html">> Home</a></li>
+            <li><a href="/pages/movies.html">> Movies</a></li>
+            <li><a href="/pages/myList.html">> My List</a></li>
+            <li><a href="/pages/contactUs.html">> Contact Us</a></li>
+            <li><a href="/pages/about.html">> About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Our Services</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/services.html">Latest Movies</a></li>
+            <li><a href="/pages/services.html">24 Hours Services</a></li>
+            <li><a href="/pages/services.html">Free Access</a></li>
+            <li><a href="/pages/services.html">Access TV show</a></li>
+            <li><a href="/pages/services.html">Condition of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Categories</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/categories.html#action">> Action</a></li>
+            <li><a href="/pages/categories.html#comedy">> Comedy</a></li>
+            <li><a href="/pages/categories.html#crime">> Crime</a></li>
+            <li><a href="/pages/categories.html#sciFi">> Sci-Fi</a></li>
+            <li><a href="/pages/categories.html#thriller">> Thriller</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Support for you</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/help.html">Help Center</a></li>
+            <li><a href="/pages/support.html">Support</a></li>
+            <li><a href="/pages/faq.html">FAQ & Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- Show Password -->
+    <script>
+      const showPassword = document.getElementById("showPassword");
+      const password = document.getElementById("password");
+
+      showPassword.addEventListener("change", () => {
+        if (showPassword.checked) {
+          password.type = "text";
+        } else {
+          password.type = "password";
+        }
+      });
+
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+        localStorage.setItem("isLoggedIn", true);
+        form.submit();
+      });
+    </script>
+  </body>
+</html>

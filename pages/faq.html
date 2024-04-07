@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>SineFlick</title>
+  </head>
+
+  <style>
+    .faq-terms-container {
+      margin: 40px auto;
+      width: 80%;
+      padding: 20px;
+      background-color: #171b27;
+      border-radius: 10px;
+      margin-top: 20px;
+      color: #fff;
+    }
+
+    .faq-terms-container h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .faq-section {
+      margin-bottom: 20px;
+    }
+
+    .faq-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .terms-section {
+      margin-bottom: 20px;
+    }
+
+    .terms-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .text-content {
+      color: var(--comment-date);
+    }
+  </style>
+
+  <body>
+    <!-- Navbar -->
+    <div class="container" style="height: auto">
+      <header class="header">
+        <div class="header-logo-container">
+          <img
+            src="/img/logo/logo-transparent.png"
+            class="header-logo"
+            alt="SineFlick"
+          />
+        </div>
+        <nav class="navBar">
+          <div class="open-btn" id="open">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="nav-items">
+            <ul class="list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/movies.html">Movies</a></li>
+              <li><a href="/pages/tvSeries.html">TV Series</a></li>
+              <li><a href="/pages/animatedMovies.html">Animated Movies</a></li>
+              <li><a href="/pages/myList.html">My List</a></li>
+              <div class="close-btn" id="close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </ul>
+            <div>
+              <ul class="user">
+                <li>
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    onclick="openSearch()"
+                  ></i>
+                </li>
+                <ul class="auth-btn">
+                  <li>
+                    <a href="/pages/signup.html" class="btn-2">Signup</a>
+                  </li>
+                  <li><a href="/pages/login.html" class="btn-1">Login</a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+              >×</span
+            >
+            <div class="overlay-content">
+              <form action="/pages/searchMovie.html" method="get">
+                <input
+                  type="text"
+                  name="query"
+                  id="searchInput"
+                  placeholder="Search.."
+                  onkeyup="getSearchSuggestions(this.value)"
+                />
+                <div id="searchSuggestions"></div>
+                <button
+                  type="submit"
+                  class="btn-1 search-button"
+                  style="border-radius: 0; height: auto"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- FAQ & Terms Content -->
+    <div class="faq-terms-container">
+      <h1 style="text-align: center">FAQ</h1>
+      <div class="faq-section">
+        <h2>What is SineFlick?</h2>
+        <p class="text-content">
+          SineFlick is a website that provides recommendations for the latest
+          movies and TV shows. It offers a variety of genres for you to enjoy
+          and allows you to create your own list of favorite movies and TV
+          shows.
+        </p>
+      </div>
+      <div class="faq-section">
+        <h2>How does SineFlick work?</h2>
+        <p class="text-content">
+          SineFlick provides personalized recommendations based on your
+          preferences. It suggests movies and TV shows that align with your
+          interests and viewing habits.
+        </p>
+      </div>
+      <div class="faq-section">
+        <h2>How can I contact SineFlick?</h2>
+        <p class="text-content">
+          If you have any questions, suggestions, or feedback, feel free to
+          contact us. You can reach us through our contact form on the website,
+          and our team will be happy to assist you.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-terms-container">
+      <h1 style="text-align: center">Terms</h1>
+      <div class="terms-section">
+        <h2>Recommendation</h2>
+        <p class="text-content">
+          The recommendation feature of SineFlick suggests movies and TV shows
+          based on your preferences and viewing history.
+        </p>
+      </div>
+      <div class="terms-section">
+        <h2>Favorites List</h2>
+        <p class="text-content">
+          The favorites list allows you to create and manage a personalized
+          collection of your favorite movies and TV shows on SineFlick.
+        </p>
+      </div>
+      <div class="terms-section">
+        <h2>Contact Us</h2>
+        <p class="text-content">
+          If you need assistance or have any inquiries, you can contact us
+          through the provided contact form or email address.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-terms-container">
+      <h1 style="text-align: center">Terms of Use</h1>
+      <div class="terms-section">
+        <h2>Acceptance of Terms</h2>
+        <p class="text-content">
+          By using SineFlick, you agree to abide by these Terms of Use and our
+          Privacy Policy. If you do not agree with any part of these terms,
+          please refrain from using the website.
+        </p>
+      </div>
+      <div class="terms-section">
+        <h2>Use of Content</h2>
+        <p class="text-content">
+          All content provided on SineFlick, including images, text, and
+          recommendations, is for informational purposes only. You may not
+          modify, distribute, or reproduce any content without prior permission.
+        </p>
+      </div>
+      <div class="terms-section">
+        <h2>Disclaimer</h2>
+        <p class="text-content">
+          SineFlick does not guarantee the accuracy, completeness, or
+          reliability of any content on the website. We are not responsible for
+          any actions taken based on the information provided.
+        </p>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <div>
+          <img
+            src="/img/logo/logo-text.png"
+            class="footer-logo"
+            alt="SineFlick logo"
+          />
+          <p class="footer-text">
+            we provide the latest movies and TV shows for you, enjoy scrolling
+          </p>
+          <div class="contact-info">
+            <h3 class="footer-title">Contact Info</h3>
+            <ul class="footer-link">
+              <li>
+                <i class="fa fa-map-marker-alt"></i>
+                <span>Cibiru, Bandung</span>
+              </li>
+              <li>
+                <i class="fa fa-phone-alt"></i>
+                <span>+123-456-7890</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title">Useful Links</h3>
+          <ul class="footer-link">
+            <li><a href="/index.html">> Home</a></li>
+            <li><a href="/pages/movies.html">> Movies</a></li>
+            <li><a href="/pages/myList.html">> My List</a></li>
+            <li><a href="/pages/contactUs.html">> Contact Us</a></li>
+            <li><a href="/pages/about.html">> About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Our Services</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/services.html">Latest Movies</a></li>
+            <li><a href="/pages/services.html">24 Hours Services</a></li>
+            <li><a href="/pages/services.html">Free Access</a></li>
+            <li><a href="/pages/services.html">Access TV show</a></li>
+            <li><a href="/pages/services.html">Condition of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Categories</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/categories.html#action">> Action</a></li>
+            <li><a href="/pages/categories.html#comedy">> Comedy</a></li>
+            <li><a href="/pages/categories.html#crime">> Crime</a></li>
+            <li><a href="/pages/categories.html#sciFi">> Sci-Fi</a></li>
+            <li><a href="/pages/categories.html#thriller">> Thriller</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Support for you</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/help.html">Help Center</a></li>
+            <li><a href="/pages/support.html">Support</a></li>
+            <li><a href="/pages/faq.html">FAQ & Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

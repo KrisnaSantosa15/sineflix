@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>SineFlick</title>
+  </head>
+
+  <style>
+    .contact-us {
+      margin-top: 100px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .contact-us-content {
+      width: 90%;
+    }
+
+    .contact-us-content h1 {
+      font-size: 3rem;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
+
+    .contact-us-content h3 {
+      font-size: 1.5rem;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
+
+    .subs-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .contact-us-text,
+    .detail-us {
+      font-size: 1rem;
+      font-family: "Montserrat", sans-serif;
+      color: var(--comment-date);
+      width: 65%;
+      margin: 20px auto;
+    }
+
+    .our-team-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .our-team {
+      width: 200px;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .our-team img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .our-team h4 {
+      font-size: 1rem;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
+
+    .our-team p {
+      font-size: 0.8rem;
+      font-family: "Montserrat", sans-serif;
+      color: var(--comment-date);
+    }
+
+    .detail-us h3 {
+      font-size: 1.5rem;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
+
+    .detail-us p {
+      font-size: 1rem;
+      font-family: "Montserrat", sans-serif;
+      color: var(--comment-date);
+    }
+
+    .detail-us h3 {
+      font-size: 1.5rem;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
+  </style>
+
+  <body>
+    <!-- Navbar -->
+    <div class="container" style="height: auto">
+      <header class="header">
+        <div class="header-logo-container">
+          <img
+            src="/img/logo/logo-transparent.png"
+            class="header-logo"
+            alt="SineFlick"
+          />
+        </div>
+        <nav class="navBar">
+          <div class="open-btn" id="open">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="nav-items">
+            <ul class="list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/movies.html">Movies</a></li>
+              <li><a href="/pages/tvSeries.html">TV Series</a></li>
+              <li><a href="/pages/animatedMovies.html">Animated Movies</a></li>
+              <li><a href="/pages/myList.html">My List</a></li>
+              <div class="close-btn" id="close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </ul>
+            <div>
+              <ul class="user">
+                <li>
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    onclick="openSearch()"
+                  ></i>
+                </li>
+                <ul class="auth-btn">
+                  <li>
+                    <a href="/pages/signup.html" class="btn-2">Signup</a>
+                  </li>
+                  <li><a href="/pages/login.html" class="btn-1">Login</a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+              >×</span
+            >
+            <div class="overlay-content">
+              <form action="/pages/searchMovie.html" method="get">
+                <input
+                  type="text"
+                  name="query"
+                  id="searchInput"
+                  placeholder="Search.."
+                  onkeyup="getSearchSuggestions(this.value)"
+                />
+                <div id="searchSuggestions"></div>
+                <button
+                  type="submit"
+                  class="btn-1 search-button"
+                  style="border-radius: 0; height: auto"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- About us -->
+    <div class="contact-us">
+      <div class="contact-us-content">
+        <h1 style="text-align: center">About</h1>
+        <p class="contact-us-text">
+          SineFlick is a website that provides the latest movies and TV shows
+          recommendation for you. We provide a variety of genres that you can
+          enjoy. We also provide a feature that allows you to create your own
+          list of favorite movies and TV shows. If you have any questions or
+          suggestions, please feel free to contact us. We are happy to help you.
+          Enjoy scrolling!
+        </p>
+
+        <div class="services detail-us">
+          <h3 style="margin-bottom: 10px">Our Services</h3>
+          <p>
+            With SineFlick you can get the latest movies and TV shows
+            recommendation, 24 hours a day. You can also create your own list of
+            favorite movies and TV shows.
+          </p>
+        </div>
+
+        <div class="detail-us">
+          <h3 style="margin-bottom: 10px">Contact Info</h3>
+          <p style="margin-bottom: 10px">
+            <i class="fa fa-map-marker-alt"></i> Cibiru, Bandung
+          </p>
+          <p style="margin-bottom: 10px">
+            <i class="fa fa-phone-alt"></i> +123-456-7890
+          </p>
+        </div>
+
+        <div class="detail-us">
+          <h3 style="margin-bottom: 10px">Our Team</h3>
+          <div class="our-team-container">
+            <div class="our-team">
+              <img
+                src="/img/profile/dannie.svg"
+                alt="team-1"
+                style="width: 100%; height: 100%"
+              />
+              <h4 style="margin-top: 10px">Krisna</h4>
+              <p>CEO</p>
+            </div>
+            <div class="our-team">
+              <img
+                src="/img/profile/dannie.svg"
+                alt="team-2"
+                style="width: 100%; height: 100%"
+              />
+              <h4 style="margin-top: 10px">Rama</h4>
+              <p>Designer</p>
+            </div>
+            <div class="our-team">
+              <img
+                src="/img/profile/dannie.svg"
+                alt="team-3"
+                style="width: 100%; height: 100%"
+              />
+              <h4 style="margin-top: 10px">Ivanka</h4>
+              <p>Developer</p>
+            </div>
+            <div class="our-team">
+              <img
+                src="/img/profile/dannie.svg"
+                alt="team-3"
+                style="width: 100%; height: 100%"
+              />
+              <h4 style="margin-top: 10px">Rafa</h4>
+              <p>Developer</p>
+            </div>
+            <div class="our-team">
+              <img
+                src="/img/profile/dannie.svg"
+                alt="team-3"
+                style="width: 100%; height: 100%"
+              />
+              <h4 style="margin-top: 10px">Alfia</h4>
+              <p>Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New releases -->
+    <div class="slider-container">
+      <div class="slider-content">
+        <h1>Just For You</h1>
+      </div>
+      <div class="owl-container">
+        <div id="owl-new-releases" class="owl-carousel owl-theme"></div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <div>
+          <img
+            src="/img/logo/logo-text.png"
+            class="footer-logo"
+            alt="SineFlick logo"
+          />
+          <p class="footer-text">
+            we provide the latest movies and TV shows for you, enjoy scrolling
+          </p>
+          <div class="contact-info">
+            <h3 class="footer-title">Contact Info</h3>
+            <ul class="footer-link">
+              <li>
+                <i class="fa fa-map-marker-alt"></i>
+                <span>Cibiru, Bandung</span>
+              </li>
+              <li>
+                <i class="fa fa-phone-alt"></i>
+                <span>+123-456-7890</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title">Useful Links</h3>
+          <ul class="footer-link">
+            <li><a href="/index.html">> Home</a></li>
+            <li><a href="/pages/movies.html">> Movies</a></li>
+            <li><a href="/pages/myList.html">> My List</a></li>
+            <li><a href="/pages/contactUs.html">> Contact Us</a></li>
+            <li><a href="/pages/about.html">> About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Our Services</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/services.html">Latest Movies</a></li>
+            <li><a href="/pages/services.html">24 Hours Services</a></li>
+            <li><a href="/pages/services.html">Free Access</a></li>
+            <li><a href="/pages/services.html">Access TV show</a></li>
+            <li><a href="/pages/services.html">Condition of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Categories</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/categories.html#action">> Action</a></li>
+            <li><a href="/pages/categories.html#comedy">> Comedy</a></li>
+            <li><a href="/pages/categories.html#crime">> Crime</a></li>
+            <li><a href="/pages/categories.html#sciFi">> Sci-Fi</a></li>
+            <li><a href="/pages/categories.html#thriller">> Thriller</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Support for you</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/help.html">Help Center</a></li>
+            <li><a href="/pages/support.html">Support</a></li>
+            <li><a href="/pages/faq.html">FAQ & Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

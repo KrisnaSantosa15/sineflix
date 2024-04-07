@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      .detail-film-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .detail-film {
+        display: flex;
+        border-radius: 8px;
+        padding: 20px;
+        width: 90%;
+        justify-content: center;
+      }
+
+      .detail-film-image {
+        width: 30%;
+      }
+
+      .detail-film-poster {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .detail-film-info {
+        width: 70%;
+        padding: 20px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .detail-film-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .detail-film-rating {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .detail-film-description {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .detail-film-genre {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .detail-film-duration {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .detail-film-release {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .detail-film-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+      }
+
+      .card-title h3 {
+        font-size: 1.3rem;
+      }
+      .card-title p {
+        font-size: 1rem;
+      }
+
+      @media screen and (max-width: 768px) {
+        .detail-film {
+          flex-direction: column;
+        }
+
+        .detail-film-image {
+          width: 100%;
+        }
+
+        .detail-film-info {
+          width: 100%;
+          padding: 0;
+        }
+        .cards {
+          margin: auto !important;
+          margin-top: 10px !important;
+        }
+      }
+
+      .cards {
+        background-color: #171b27;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        width: 250px !important;
+      }
+
+      .detail-film-crew {
+        display: flex;
+        margin-top: 50px;
+        justify-content: center;
+      }
+    </style>
+    <title>SineFlick</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container" style="height: auto">
+      <header class="header" style="position: relative">
+        <div class="header-logo-container">
+          <img
+            src="/img/logo/logo-transparent.png"
+            class="header-logo"
+            alt="SineFlick"
+          />
+        </div>
+        <nav class="navBar">
+          <div class="open-btn" id="open">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="nav-items">
+            <ul class="list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/movies.html">Movies</a></li>
+              <li><a href="/pages/tvSeries.html">TV Series</a></li>
+              <li><a href="/pages/animatedMovies.html">Animated Movies</a></li>
+              <li><a href="/pages/myList.html">My List</a></li>
+              <div class="close-btn" id="close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </ul>
+            <div>
+              <ul class="user">
+                <li>
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    onclick="openSearch()"
+                  ></i>
+                </li>
+                <ul class="auth-btn">
+                  <li>
+                    <a href="/pages/signup.html" class="btn-2">Signup</a>
+                  </li>
+                  <li><a href="/pages/login.html" class="btn-1">Login</a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+              >×</span
+            >
+            <div class="overlay-content">
+              <form action="/pages/searchMovie.html" method="get">
+                <input
+                  type="text"
+                  name="query"
+                  id="searchInput"
+                  placeholder="Search.."
+                  onkeyup="getSearchSuggestions(this.value)"
+                />
+                <div id="searchSuggestions"></div>
+                <button
+                  type="submit"
+                  class="btn-1 search-button"
+                  style="border-radius: 0; height: auto"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- Detail Film -->
+    <div style="margin-bottom: 20px">
+      <div class="detail-film-container">
+        <div
+          id="detail-film-info-container"
+          style="background-color: #171b27"
+          class="detail-film"
+        ></div>
+      </div>
+
+      <h1 style="text-align: center; margin-top: 20px; color: #fff">
+        Directors
+      </h1>
+      <div class="detail-film-crew">
+        <div id="detail-film-directors" class="detail-film"></div>
+      </div>
+
+      <h1 style="text-align: center; margin-top: 20px; color: #fff">Stars</h1>
+      <div class="detail-film-crew">
+        <div id="detail-film-stars" class="detail-film"></div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <div>
+          <img
+            src="/img/logo/logo-text.png"
+            class="footer-logo"
+            alt="SineFlick logo"
+          />
+          <p class="footer-text">
+            we provide the latest movies and TV shows for you, enjoy scrolling
+          </p>
+          <div class="contact-info">
+            <h3 class="footer-title">Contact Info</h3>
+            <ul class="footer-link">
+              <li>
+                <i class="fa fa-map-marker-alt"></i>
+                <span>Cibiru, Bandung</span>
+              </li>
+              <li>
+                <i class="fa fa-phone-alt"></i>
+                <span>+123-456-7890</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title">Useful Links</h3>
+          <ul class="footer-link">
+            <li><a href="/index.html">> Home</a></li>
+            <li><a href="/pages/movies.html">> Movies</a></li>
+            <li><a href="/pages/myList.html">> My List</a></li>
+            <li><a href="/pages/contactUs.html">> Contact Us</a></li>
+            <li><a href="/pages/about.html">> About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Our Services</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/services.html">Latest Movies</a></li>
+            <li><a href="/pages/services.html">24 Hours Services</a></li>
+            <li><a href="/pages/services.html">Free Access</a></li>
+            <li><a href="/pages/services.html">Access TV show</a></li>
+            <li><a href="/pages/services.html">Condition of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Categories</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/categories.html#action">> Action</a></li>
+            <li><a href="/pages/categories.html#comedy">> Comedy</a></li>
+            <li><a href="/pages/categories.html#crime">> Crime</a></li>
+            <li><a href="/pages/categories.html#sciFi">> Sci-Fi</a></li>
+            <li><a href="/pages/categories.html#thriller">> Thriller</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Support for you</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/help.html">Help Center</a></li>
+            <li><a href="/pages/support.html">Support</a></li>
+            <li><a href="/pages/faq.html">FAQ & Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const movieId = urlParams.get("id");
+
+      fetch("/js/data/data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const movie = data.items.find((item) => item.id === movieId);
+
+          const detailFilmInfoContainer = document.getElementById(
+            "detail-film-info-container"
+          );
+          detailFilmInfoContainer.innerHTML = `
+            <div class="detail-film-image">
+              <img
+                src="${movie.img}"
+                alt="${movie.title}"
+                class="detail-film-poster"
+              />
+            </div>
+            <div class="detail-film-info">
+              <h1 class="detail-film-title">${movie.title}</h1>
+              <p class="detail-film-rating">Rating: ${movie.rating}</p>
+              <p class="detail-film-description">${movie.description}</p>
+              <p class="detail-film-genre">Genre: ${movie.genre}</p>
+              <p class="detail-film-duration">Duration: ${movie.time}</p>
+              <p class="detail-film-release">Release Date: ${movie.year}</p>
+              <div class="detail-film-buttons">
+                <button class="btn-1">Watch Trailer</button>
+                <button class="btn-2">Add to My List</button>
+              </div>
+            </div>
+          `;
+
+          const detailFilmDirectors = document.getElementById(
+            "detail-film-directors"
+          );
+          detailFilmDirectors.innerHTML = movie.director
+            .map(
+              (director) => `
+            <div class="cards">
+              <div class="card-img">
+                <img
+                  class="lazyOwl"
+                  src="/img/profile/dannie.svg"
+                  alt="${director}"
+                />
+              </div>
+              <div class="card-title text-center">
+                <h3>${director}</h3>
+                <p>Director</p>
+              </div>
+            </div>
+          `
+            )
+            .join("");
+
+          const detailFilmStars = document.getElementById("detail-film-stars");
+          detailFilmStars.innerHTML = movie.stars
+            .map(
+              (star) => `
+            <div class="cards">
+              <div class="card-img">
+                <img
+                  class="lazyOwl"
+                  src="/img/profile/dannie.svg"
+                  alt="${star}"
+                />
+              </div>
+              <div class="card-title text-center">
+                <h3>${star}</h3>
+                <p>Star</p>
+              </div>
+            </div>
+          `
+            )
+            .join("");
+        });
+    </script>
+  </body>
+</html>

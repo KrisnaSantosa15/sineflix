@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>SineFlick</title>
+  </head>
+  <body>
+    <div class="container" style="height: auto">
+      <header class="header" style="position: relative">
+        <div class="header-logo-container">
+          <img
+            src="/img/logo/logo-transparent.png"
+            class="header-logo"
+            alt="SineFlick"
+          />
+        </div>
+        <nav class="navBar">
+          <div class="open-btn" id="open">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="nav-items">
+            <ul class="list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/movies.html">Movies</a></li>
+              <li><a href="/pages/tvSeries.html">TV Series</a></li>
+              <li><a href="/pages/animatedMovies.html">Animated Movies</a></li>
+              <li><a href="/pages/myList.html">My List</a></li>
+              <div class="close-btn" id="close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </ul>
+            <div>
+              <ul class="user">
+                <li>
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    onclick="openSearch()"
+                  ></i>
+                </li>
+                <ul class="auth-btn">
+                  <li>
+                    <a href="/pages/signup.html" class="btn-2">Signup</a>
+                  </li>
+                  <li><a href="/pages/login.html" class="btn-1">Login</a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+              >×</span
+            >
+            <div class="overlay-content">
+              <form action="/pages/searchMovie.html" method="get">
+                <input
+                  type="text"
+                  name="query"
+                  id="searchInput"
+                  placeholder="Search.."
+                  onkeyup="getSearchSuggestions(this.value)"
+                />
+                <div id="searchSuggestions"></div>
+                <button
+                  type="submit"
+                  class="btn-1 search-button"
+                  style="border-radius: 0; height: auto"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="movies">
+      <div class="movies-title">
+        <h1 id="search-text-result"></h1>
+      </div>
+      <div class="movies-ctg">
+        <div class="ctg-1" id="genreButtons"></div>
+      </div>
+
+      <div class="movies-card" id="movieContainer"></div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <div>
+          <img
+            src="/img/logo/logo-text.png"
+            class="footer-logo"
+            alt="SineFlick logo"
+          />
+          <p class="footer-text">
+            we provide the latest movies and TV shows for you, enjoy scrolling
+          </p>
+          <div class="contact-info">
+            <h3 class="footer-title">Contact Info</h3>
+            <ul class="footer-link">
+              <li>
+                <i class="fa fa-map-marker-alt"></i>
+                <span>Cibiru, Bandung</span>
+              </li>
+              <li>
+                <i class="fa fa-phone-alt"></i>
+                <span>+123-456-7890</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title">Useful Links</h3>
+          <ul class="footer-link">
+            <li><a href="/index.html">> Home</a></li>
+            <li><a href="/pages/movies.html">> Movies</a></li>
+            <li><a href="/pages/myList.html">> My List</a></li>
+            <li><a href="/pages/contactUs.html">> Contact Us</a></li>
+            <li><a href="/pages/about.html">> About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Our Services</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/services.html">Latest Movies</a></li>
+            <li><a href="/pages/services.html">24 Hours Services</a></li>
+            <li><a href="/pages/services.html">Free Access</a></li>
+            <li><a href="/pages/services.html">Access TV show</a></li>
+            <li><a href="/pages/services.html">Condition of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Categories</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/categories.html#action">> Action</a></li>
+            <li><a href="/pages/categories.html#comedy">> Comedy</a></li>
+            <li><a href="/pages/categories.html#crime">> Crime</a></li>
+            <li><a href="/pages/categories.html#sciFi">> Sci-Fi</a></li>
+            <li><a href="/pages/categories.html#thriller">> Thriller</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Support for you</h3>
+          <ul class="footer-link">
+            <li><a href="/pages/help.html">Help Center</a></li>
+            <li><a href="/pages/support.html">Support</a></li>
+            <li><a href="/pages/faq.html">FAQ & Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script>
+      const nav = document.querySelector(".nav-items");
+      const open = document.getElementById("open");
+      const close = document.getElementById("close");
+
+      open.addEventListener("click", () => {
+        nav.style.display = "flex";
+        nav.style.top = "0%";
+      });
+      close.addEventListener("click", () => {
+        nav.style.top = "-110vh";
+      });
+
+      function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+      }
+
+      async function getSearchSuggestions(keyword) {
+        const response = await fetch("/js/data/data.json");
+        const data = await response.json();
+        const movies = data.items;
+
+        const searchSuggestions = document.getElementById("searchSuggestions");
+        searchSuggestions.innerHTML = "";
+
+        if (keyword.trim() !== "") {
+          const filteredMovies = movies.filter((movie) =>
+            movie.title.toLowerCase().includes(keyword.toLowerCase())
+          );
+          filteredMovies.forEach((movie) => {
+            const link = document.createElement("a");
+            link.textContent = `${movie.title} - ${movie.type}`;
+            link.href = `/pages/detailFilm.html?id=${movie.id}`;
+
+            const suggestionElement = document.createElement("div");
+            suggestionElement.addEventListener("click", () => {
+              document.querySelector("input[name='search']").value =
+                movie.title;
+              searchSuggestions.innerHTML = "";
+            });
+            suggestionElement.appendChild(link);
+            searchSuggestions.appendChild(suggestionElement);
+          });
+        }
+      }
+
+      window.onscroll = function () {
+        const header = document.querySelector("header");
+        const fixedNav = header.offsetTop;
+        // const toTop = document.querySelector("#to-top");
+
+        if (window.pageYOffset > fixedNav) {
+          // header.classList.add("navbar-fixed");
+          header.style.position = "fixed";
+        } else {
+          // header.classList.remove("navbar-fixed");
+          header.style.position = "relative";
+        }
+      };
+
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const query = urlParams.get("query");
+      const searchResult = document.getElementById("search-text-result");
+
+      fetch("/js/data/data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          let movies = data.items.filter((item) =>
+            item.title.toLowerCase().includes(query.toLowerCase())
+          );
+          searchResult.innerHTML = `Got ${movies.length} results for: "${query}"`;
+          generateMovieCards(movies);
+        });
+
+      function generateMovieCards(movies) {
+        const movieContainer = document.getElementById("movieContainer");
+
+        movieContainer.innerHTML = "";
+
+        if (movies.length === 0) {
+          let content = `
+                    <div class="no-movies">
+                        <h2>No movies found.</h2>
+                    </div>
+                `;
+          movieContainer.innerHTML = content;
+        } else {
+          movies.forEach((movie) => {
+            const card = `
+                        <a href="/pages/detailFilm.html?id=${movie.id}">
+                            <div class="cards">
+                                <div class="card-img">
+                                    <img src="${movie.img}" alt="${
+              movie.title
+            }">
+                                    <div class="img-title">
+                                        <h4>${movie.rating}</h4>
+                                        <p>IMDb</p>
+                                    </div>
+                                </div>
+                                <div class="card-title">
+                                    <h3>${movie.title}</h3>
+                                    <p>${movie.genre.join(", ")}</p>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+            movieContainer.insertAdjacentHTML("beforeend", card);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
