@@ -29,12 +29,16 @@ let swiper = new Swiper(".mySwiper", {
 // OWL Carousel
 $(document).ready(function () {
   // New releases
-  $.getJSON("/js/data/data.json", function (data) {
-    let content = "";
-    $.each(data.items, function (index, item) {
-      if (item.type == "Movie" && item.year > 2020) {
-        content += `
-            <a href="/pages/detailFilm.html?id=${item.id}">
+  $.getJSON(
+    "https://krisnasantosa15.github.io/sineflix/js/data/data.json",
+    function (data) {
+      let content = "";
+      $.each(data.items, function (index, item) {
+        if (item.type == "Movie" && item.year > 2020) {
+          content += `
+            <a href="https://krisnasantosa15.github.io/sineflix/pages/detailFilm.html?id=${
+              item.id
+            }">
             <div class="cards">
               <div class="card-img">
                 <img class="lazyOwl" src="${item.img}" alt="${item.title}">
@@ -50,43 +54,48 @@ $(document).ready(function () {
             </div>
             </a>
             `;
-      }
-    });
+        }
+      });
 
-    $("#owl-new-releases").html(content);
+      $("#owl-new-releases").html(content);
 
-    $("#owl-new-releases").owlCarousel({
-      loop: true,
-      lazyLoad: true,
-      margin: 0,
-      nav: true,
-      responsive: {
-        0: {
-          items: 1,
+      $("#owl-new-releases").owlCarousel({
+        loop: true,
+        lazyLoad: true,
+        margin: 0,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          500: {
+            items: 2,
+          },
+          768: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+          1200: {
+            items: 5,
+          },
         },
-        500: {
-          items: 2,
-        },
-        768: {
-          items: 3,
-        },
-        1000: {
-          items: 4,
-        },
-        1200: {
-          items: 5,
-        },
-      },
-    });
-  });
+      });
+    }
+  );
 
   // Animated
-  $.getJSON("/js/data/data.json", function (data) {
-    let content = "";
-    $.each(data.items, function (index, item) {
-      if (item.type == "Animation") {
-        content += `
-        <a href="/pages/detailFilm.html?id=${item.id}">
+  $.getJSON(
+    "https://krisnasantosa15.github.io/sineflix/js/data/data.json",
+    function (data) {
+      let content = "";
+      $.each(data.items, function (index, item) {
+        if (item.type == "Animation") {
+          content += `
+        <a href="https://krisnasantosa15.github.io/sineflix/pages/detailFilm.html?id=${
+          item.id
+        }">
         <div class="cards">
           <div class="card-img">
             <img class="lazyOwl" src="${item.img}" alt="${item.title}">
@@ -102,42 +111,47 @@ $(document).ready(function () {
         </div>
         </a>
       `;
-      }
-    });
-    $("#owl-animated-movies").html(content);
+        }
+      });
+      $("#owl-animated-movies").html(content);
 
-    $("#owl-animated-movies").owlCarousel({
-      loop: true,
-      lazyLoad: true,
-      margin: 0,
-      nav: true,
-      responsive: {
-        0: {
-          items: 1,
+      $("#owl-animated-movies").owlCarousel({
+        loop: true,
+        lazyLoad: true,
+        margin: 0,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          500: {
+            items: 2,
+          },
+          768: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+          1200: {
+            items: 5,
+          },
         },
-        500: {
-          items: 2,
-        },
-        768: {
-          items: 3,
-        },
-        1000: {
-          items: 4,
-        },
-        1200: {
-          items: 5,
-        },
-      },
-    });
-  });
+      });
+    }
+  );
 
   //   TV Series
-  $.getJSON("/js/data/data.json", function (data) {
-    let content = "";
-    $.each(data.items, function (index, item) {
-      if (item.type == "TV") {
-        content += `
-        <a href="/pages/detailFilm.html?id=${item.id}">
+  $.getJSON(
+    "https://krisnasantosa15.github.io/sineflix/js/data/data.json",
+    function (data) {
+      let content = "";
+      $.each(data.items, function (index, item) {
+        if (item.type == "TV") {
+          content += `
+        <a href="https://krisnasantosa15.github.io/sineflix/pages/detailFilm.html?id=${
+          item.id
+        }">
         <div class="cards">
           <div class="card-img">
             <img class="lazyOwl" src="${item.img}" alt="${item.title}">
@@ -153,34 +167,35 @@ $(document).ready(function () {
         </div>
         </a>
       `;
-      }
-    });
-    $("#owl-tv-series").html(content);
+        }
+      });
+      $("#owl-tv-series").html(content);
 
-    $("#owl-tv-series").owlCarousel({
-      loop: true,
-      lazyLoad: true,
-      margin: 0,
-      nav: true,
-      responsive: {
-        0: {
-          items: 1,
+      $("#owl-tv-series").owlCarousel({
+        loop: true,
+        lazyLoad: true,
+        margin: 0,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          500: {
+            items: 2,
+          },
+          768: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+          1200: {
+            items: 5,
+          },
         },
-        500: {
-          items: 2,
-        },
-        768: {
-          items: 3,
-        },
-        1000: {
-          items: 4,
-        },
-        1200: {
-          items: 5,
-        },
-      },
-    });
-  });
+      });
+    }
+  );
 });
 
 const nav = document.querySelector(".nav-items");
@@ -204,7 +219,9 @@ function closeSearch() {
 }
 
 async function getSearchSuggestions(keyword) {
-  const response = await fetch("/js/data/data.json");
+  const response = await fetch(
+    "https://krisnasantosa15.github.io/sineflix/js/data/data.json"
+  );
   const data = await response.json();
   const movies = data.items;
 
@@ -238,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchMovies();
 
   function fetchMovies() {
-    fetch("/js/data/data.json")
+    fetch("https://krisnasantosa15.github.io/sineflix/js/data/data.json")
       .then((response) => response.json())
       .then((data) => {
         generateGenreButtons();
@@ -290,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function filterMovies() {
-    fetch("/js/data/data.json")
+    fetch("https://krisnasantosa15.github.io/sineflix/js/data/data.json")
       .then((response) => response.json())
       .then((data) => {
         let filteredMovies = data.items;
@@ -319,7 +336,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       movies.slice(0, 15).forEach((movie) => {
         const card = `
-          <a href="/pages/detailFilm.html?id=${movie.id}">
+          <a href="https://krisnasantosa15.github.io/sineflix/pages/detailFilm.html?id=${
+            movie.id
+          }">
           <div class="cards">
               <div class="card-img">
                   <img src="${movie.img}" alt="${movie.title}">
