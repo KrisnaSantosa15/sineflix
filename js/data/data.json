@@ -4,6 +4,7 @@
         "id": "MOV1",
         "type":"Movie",
         "title": "Spider-man No Way Home",
+        "trailer": "https://www.youtube.com/embed/JfVOs4VSpmA",
         "img": "/img/movies/spiderman-no-way-home.svg",
         "genre": ["Action", "Adventure", "Fantasy"],
         "year": 2021,
