@@ -143,6 +143,74 @@
         margin-top: 50px;
         justify-content: center;
       }
+
+      .trailer-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .trailer {
+        width: 90%;
+      }
+
+      .iframe-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 rasio */
+        overflow: hidden;
+      }
+
+      .trailer iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .additional-info-container {
+        color: #f2f2f2;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 15px;
+      }
+
+      .section-title {
+        font-family: "Arial", sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .info-item {
+        background-color: #161722;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .info-item h3 {
+        font-family: "Arial", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .info-item ul,
+      .info-item p {
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #f2f2f2;
+      }
     </style>
     <title>SineFlick</title>
   </head>
@@ -255,6 +323,13 @@
     </div>
 
     <!-- Detail Film -->
+
+    <div class="trailer-container">
+      <div class="trailer">
+        <div class="iframe-wrapper"></div>
+      </div>
+    </div>
+
     <div style="margin-bottom: 20px">
       <div class="detail-film-container">
         <div
@@ -274,6 +349,69 @@
       <h1 style="text-align: center; margin-top: 20px; color: #fff">Stars</h1>
       <div class="detail-film-crew">
         <div id="detail-film-stars" class="detail-film"></div>
+      </div>
+    </div>
+
+    <section class="additional-info-container">
+      <h2 class="section-title">More About SPIDER-MAN No Way Home</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <h3>Storyline</h3>
+          <ul>
+            <p>
+              Peter Parker's secret identity is revealed to the entire world.
+              Desperate for help, Peter turns to Doctor Strange to make the
+              world forget that he is Spider-Man. The spell goes horribly wrong
+              and shatters the multiverse, bringing in monstrous villains that
+              could destroy the world.
+            </p>
+          </ul>
+        </div>
+        <div class="info-item">
+          <h3>Cast</h3>
+          <ul>
+            <li>Tom Holland as Spiderman</li>
+            <li>Zendaya as MJ</li>
+            <li>Benedict Cumberbatch as Doctor Strane</li>
+          </ul>
+        </div>
+        <div class="info-item">
+          <h3>Quotes</h3>
+          <li>
+            Peter Parker: If I can fix what happened to you then when you go
+            back things will be different and you might not die fighting
+            Spider-Man.
+          </li>
+          <li>Max Dillon: What do you mean fix us?</li>
+          <li>Peter Parker: Look, our technology is advanced...</li>
+          <li>
+            Norman Osborn: I can help you. You know, I'm something of a
+            scientist myself. Octavius knows what I can do.
+          </li>
+          <li>Otto Octavius: Fix? You mean like a dog? I refuse.</li>
+          <li>
+            Peter Parker: I can't promise you guys anything but at least this
+            way you actually get to go home and have a chance, a second chance.
+          </li>
+        </div>
+      </div>
+    </section>
+
+    <div class="slider-container">
+      <div class="slider-content">
+        <h1>More Like This</h1>
+      </div>
+      <div class="owl-container">
+        <div id="owl-new-releases" class="owl-carousel owl-theme"></div>
+      </div>
+    </div>
+
+    <div class="slider-container">
+      <div class="slider-content">
+        <h1>Trending Now</h1>
+      </div>
+      <div class="owl-container">
+        <div id="owl-animated-movies" class="owl-carousel owl-theme"></div>
       </div>
     </div>
 
@@ -445,7 +583,12 @@
         .then((response) => response.json())
         .then((data) => {
           const movie = data.items.find((item) => item.id === movieId);
-
+          const trailerContainer = document.querySelector(
+            ".trailer .iframe-wrapper"
+          );
+          trailerContainer.innerHTML = `
+              <iframe src="${movie.trailer}" title="${movie.title} Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          `;
           const detailFilmInfoContainer = document.getElementById(
             "detail-film-info-container"
           );
