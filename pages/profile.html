@@ -1,497 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
-    <link rel="icon" href="/img/logo/logo-transparent.png" type="image/png">
-    <link rel="stylesheet" href="/css/profileStyle.css">
-</head>
+    <link rel="icon" href="/img/logo/logo-transparent.png" type="image/png" />
+    <link rel="stylesheet" href="/css/profileStyle.css" />
+  </head>
 
-<body>
+  <body>
     <div class="full-page">
-        <div class="menu-bar">
-            <div>
-                <a  class="title" href="/index.html">
-                <img src="/img/logo/logo-transparent.png" alt="">
-                </a>
-            </div>
-            <div>
-                <div class="menu-button active-menu" id="menu1"><img class="icon-image" src="/img/AssetsOnProfile/user.png"
-                        alt=""><button class="menu-text">Profile</button></div>
-                <div class="menu-button" id="menu2"><img class="icon-image" src="/img/AssetsOnProfile/collection.png" alt=""><button
-                        class="menu-text">Collection</button></div>
-                <div class="menu-button" id="menu3"><img class="icon-image" src="/img/AssetsOnProfile/Info.png" alt=""><button
-                        class="menu-text">About</button></div>
-                <div class="menu-button" id="menu4"><img class="icon-image" src="/img/AssetsOnProfile/signOut.png" alt=""><button
-                        class="menu-text">Log Out</button></div>
-            </div>
+      <div class="menu-bar">
+        <div>
+          <a class="title" href="/index.html">
+            <img src="/img/logo/logo-transparent.png" alt="" />
+          </a>
         </div>
-        <div class="right-side-page">
-            <div class="header-container">
-                <div class="header">
-                    <div class="search-container">
-                        <div class="search-bar">
-                            <input type="text" placeholder="Search...">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                    <div class="small-profile">
-                        <div class="user-name">
-                            MovieFan123
-                        </div>
-                        <div class="profile-icon-container">
-                            <img class="profile-icon" src="/img/profile/profilePicture.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu active-content" id="page1">
-
-                <div class="container">
-
-                    <div class="profile-sub-menus">
-                        <div class="submenu" id="submenu1">
-                            <h3 class="submenu-title ">Account Settings</h3>
-                            <p class="submenu-details">Details about your personal information</p>
-                        </div>
-                        <div class="submenu" id="submenu2">
-                            <h3 class="submenu-title">Notification</h3>
-                            <p class="submenu-details">Details about your personal information</p>
-                        </div>
-                        <div class="submenu" id="submenu3">
-                            <h3 class="submenu-title">Password & Security</h3>
-                            <p class="submenu-details">Details about your personal information</p>
-                        </div>
-                    </div>
-
-                    <div class="right-content" id="subContent1">
-
-                        <div class="update-photo-container">
-                            <div class="profile-picture">
-                                <img src="/img/profile/profilePicture.png" alt="Foto Profil">
-                            </div>
-                            <div class="update-photo-text">
-                                <h3>MovieFan123</h3>
-                                <p>profilePicture.jpg</p>
-                            </div>
-                            <div class="update-photo-button-container">
-                                <button class="update-photo-button">update</button>
-                            </div>
-                        </div>
-                        <div class="form-update-container active-edit-profile" id="edited">
-                            <div class="form-update">
-                                <div class="edit-profile-button-container" id="edit-button">
-                                    <img class="edit-profile-button" src="/img/AssetsOnProfile/Edit.png" alt="">
-                                </div>
-                                <form action="">
-                                    <div class="form-row-multiple">
-                                        <div class="profile-update-input-1">
-                                            <label for="">Full Name</label>
-                                            <p class="profile-data">Si Pengguna</p>
-                                        </div>
-                                        <div class="profile-update-input-2">
-                                            <label for="">Email Address</label>
-                                            <p class="profile-data">siPengguna@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="profile-update-input">
-                                            <label for="">Address</label>
-                                            <p class="profile-data">Cibiru, Bandung</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-row-multiple">
-                                        <div class="profile-update-input-1">
-                                            <label for="">City</label>
-                                            <p class="profile-data">Bandung</p>
-                                        </div>
-                                        <div class="profile-update-input-2">
-                                            <label for="">State/Province</label>
-                                            <p class="profile-data">Jawa Barat</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-row-multiple">
-                                        <div class="profile-update-input-1">
-                                            <label for="">Birth date</label>
-                                            <p class="profile-data">08/04/2024</p>
-                                        </div>
-                                        <div class="profile-update-input-2">
-                                            <label for="">Country</label>
-                                            <p class="profile-data">Indonesia</p>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="form-update-container" id="editing">
-                            <div class="form-update">
-                                <form action="">
-                                    <div class="edit-profile-button-editing-container" id="exit-button">
-                                        <img class="edit-profile-button-editing" src="/img/AssetsOnProfile/Close.png" alt="">
-                                    </div>
-                                    <div class="form-row-multiple">
-                                        <div class="profile-update-input-1">
-                                            <label for="">Full Name*</label>
-                                            <input class="profile-data-input" placeholder="Si Pengguna" type="text"
-                                                name="" id="">
-                                        </div>
-                                        <div class="profile-update-input-2">
-                                            <label for="">Email Address*</label>
-                                            <input class="profile-data-input" placeholder="siPengguna@gmail.com"
-                                                type="email" name="" id="">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="profile-update-input">
-                                            <label for="">Address</label>
-                                            <input class="profile-data-input" placeholder="Cibiru, Bandung" type="text"
-                                                name="" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-row-multiple">
-                                        <div class="profile-update-input-1">
-                                            <label for="">City</label>
-                                            <input class="profile-data-input" placeholder="Bandung" type="text" name=""
-                                                id="">
-                                        </div>
-                                        <div class="profile-update-input-2">
-                                            <label for="">State/Province</label>
-                                            <input class="profile-data-input" placeholder="Jawa Barat" type="text"
-                                                name="" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-row-multiple">
-                                        <div class="profile-update-input-1">
-                                            <label for="">Birth date</label>
-                                            <input class="profile-data-input" type="date" name="" id=""
-                                                placeholder="08/04/2024">
-                                        </div>
-                                        <div class="profile-update-input-2">
-                                            <label for="">Country</label>
-                                            <input class="profile-data-input" placeholder="Indonesia" type="text"
-                                                name="" id="">
-                                        </div>
-                                    </div>
-                                    <div class="submit-button-container" id="accept-button">
-                                        <button class="submit-button" type="submit">Update Account</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="right-content" id="subContent2">
-                        <div class="subContent23-title-and-icon">
-                            <div class="subContent23-icon">
-                                <img src="/img/AssetsOnProfile/bell.png" alt="">
-                            </div>
-                            <div class="subContent23-title">
-                                <h2 class="subContent23-general-title">Notification Settings</h2>
-                                <p class="subContent23-detailed-title">Select the kinds of notification to get about your
-                                    activites and
-                                    recommendations.</p>
-                            </div>
-                        </div>
-                        <div class="email-notification">
-                            <div class="email-notification-title">
-                                <h3 class="general-text">Email Notifications</h3>
-                                <p class="detailed-text">Get emails to find out what's going on when you're
-                                    not online. You can turn these off.</p>
-                            </div>
-                            <div class="email-notification-content-container">
-                                <div class="email-notification-content" id="email-content-1">
-                                    <div class="email-notification-button" id="email-button-1">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="email-notification-detail" id="email-detail-1">
-                                        <h3 class="general-text">News and Updates</h3>
-                                        <p class="detailed-text">News about products and feature updates</p>
-                                    </div>
-                                    <div class="email-notification-dropdown" id="email-dropdown-1">
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Suggested</button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Pilihan 1</a>
-                                                <a href="#">Pilihan 2</a>
-                                                <a href="#">Pilihan 3</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="email-notification-content" id="email-content-2">
-                                    <div class="email-notification-button" id="email-button-2">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="email-notification-detail" id="email-detail-2">
-                                        <h3 class="general-text">Tips and Tutorials</h3>
-                                        <p class="detailed-text">Tips on getting more out of Untitled</p>
-                                    </div>
-                                    <div class="email-notification-dropdown" id="email-dropdown-2">
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Suggested</button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Pilihan 1</a>
-                                                <a href="#">Pilihan 2</a>
-                                                <a href="#">Pilihan 3</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="email-notification-content" id="email-content-3">
-                                    <div class="email-notification-button" id="email-button-3">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="email-notification-detail" id="email-detail-3">
-                                        <h3 class="general-text">Comments</h3>
-                                        <p class="detailed-text">Comments on your posts and replies to comments</p>
-                                    </div>
-                                    <div class="email-notification-dropdown" id="email-dropdown-3">
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Suggested</button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Pilihan 1</a>
-                                                <a href="#">Pilihan 2</a>
-                                                <a href="#">Pilihan 3</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="email-notification-content" id="email-content-4">
-                                    <div class="email-notification-button" id="email-button-4">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="email-notification-detail" id="email-detail-4">
-                                        <h3 class="general-text">Reminders</h3>
-                                        <p class="detailed-text">These are notifications to remind you of updates you
-                                            might have missed</p>
-                                    </div>
-                                    <div class="email-notification-dropdown" id="email-dropdown-4">
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Suggested</button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Pilihan 1</a>
-                                                <a href="#">Pilihan 2</a>
-                                                <a href="#">Pilihan 3</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="push-notification">
-
-                            <div class="email-notification-title">
-                                <h3 class="general-text">Push notifications</h3>
-                                <p class="detailed-text">Get push notifications in-app to find out what's going on when
-                                    you're online.</p>
-                            </div>
-                            <div class="email-notification-content-container">
-                                <div class="email-notification-content" id="email-content-1">
-                                    <div class="email-notification-button" id="email-button-1">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="email-notification-detail" id="email-detail-1">
-                                        <h3 class="general-text">Comments</h3>
-                                        <p class="detailed-text">Comments on your posts and replies to comments</p>
-                                    </div>
-                                    <div class="email-notification-dropdown" id="email-dropdown-1">
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Suggested</button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Pilihan 1</a>
-                                                <a href="#">Pilihan 2</a>
-                                                <a href="#">Pilihan 3</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="email-notification-content" id="email-content-2">
-                                    <div class="email-notification-button" id="email-button-2">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="email-notification-detail" id="email-detail-2">
-                                        <h3 class="general-text">Reminders</h3>
-                                        <p class="detailed-text">These are notifications to remind you of updates you
-                                            might have missed</p>
-                                    </div>
-                                    <div class="email-notification-dropdown" id="email-dropdown-2">
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Suggested</button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Pilihan 1</a>
-                                                <a href="#">Pilihan 2</a>
-                                                <a href="#">Pilihan 3</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="email-notification-content" id="email-content-3">
-                                    <div class="email-notification-button" id="email-button-3">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="email-notification-detail" id="email-detail-3">
-                                        <h3 class="general-text">More Activity about you</h3>
-                                        <p class="detailed-text">These are notifications for posts on your profile,
-                                            likes and other reactions to your posts, and more</p>
-                                    </div>
-                                    <div class="email-notification-dropdown" id="email-dropdown-3">
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Suggested</button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Pilihan 1</a>
-                                                <a href="#">Pilihan 2</a>
-                                                <a href="#">Pilihan 3</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="advanced-filters">
-
-                            <div class="advanced-filters-title">
-                                <h3 class="general-text">Advanced Filters</h3>
-                                <p class="detailed-text">Fine-tune the notifications you'd like to see - and those you
-                                    don't.</p>
-                            </div>
-                            <div class="advanced-filters-button-container">
-                                <button class="advanced-filters-button">Set Up Filters</button>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="right-content" id="subContent3">
-                        <div class="subContent23-title-and-icon">
-                            <div class="subContent23-icon">
-                                <img src="/img/AssetsOnProfile/lock.png" alt="">
-                            </div>
-                            <div class="subContent23-title">
-                                <h2 class="subContent23-general-title">Security</h2>
-                                <p class="subContent23-detailed-title">Settings and recommendations to keep your account
-                                    secure</p>
-                            </div>
-                        </div>
-                        <div class="securityAction">
-                            <div>
-                                <h3 class="general-text">Set Account Security</h3>
-                                <p class="detailed-text">Strengthen your account security by modifying your password or
-                                    security inquiries</p>
-                            </div>
-                            <div class="security-action-button-container">
-                                <button class="security-action-button">PROTECT YOUR ACCOUNT</button>
-                            </div>
-                        </div>
-                        <div class="securityAction">
-                            <div>
-                                <h3 class="general-text">Two Factor Authentication</h3>
-                                <p class="detailed-text">Add additional information to log into your account</p>
-                            </div>
-                            <div class="security-action-button-container">
-                                <button class="security-action-button">TURN ON</button>
-                            </div>
-                        </div>
-                        <div class="securityAction">
-                            <div>
-                                <h3 class="general-text">Activity History</h3>
-                                <p class="detailed-text">List of activites such as the last time it is logged in or the
-                                    modification of your account</p>
-                            </div>
-                            <div class="security-action-button-container">
-                                <button class="security-action-button">MANAGE ACTIVITIES</button>
-                            </div>
-                        </div>
-                        <div class="securityAction">
-                            <div>
-                                <h3 class="general-text">Privacy Policy</h3>
-                                <p class="detailed-text">Get to know more on how the user's datas are managed by
-                                    SineFlick</p>
-                            </div>
-                            <div class="security-action-button-container">
-                                <button class="security-action-button">LEARN MORE</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="menu" id="page2">
-                <div class="movie-list">
-                    <h2 style="color:#F77E8C">Your Collection</h2>
-                    <ul class="movies" id="movieContainer">
-                        <!-- tempat list film dimasukkan secara dinamis -->
-                    </ul>
-                    <div class="button-container">
-                        <button id="prevButton" disabled>Previous</button>
-                        <button id="nextButton">Next</button>
-                    </div>
-                </div>
-                <div class="nextButton">Next</div>
-            </div>
-
-            <div class="menu" id="page3">
-                <div class="container-about">
-                    <div class="about-section-1">
-                        <div class="image-about"><img src="/img/logo/logo-transparent.png" alt=""></div>
-                        <div class="text-about">
-                            <p>SineFlick is an online platfrom which provides the most recent complete information about
-                                movies. With SineFlick, user can easily find any movies based on its title, genre,
-                                release date, even the actor and the director taking part in it. <br><br> This platform
-                                also provides: movie synopsis, rating, review, genre, movie trailer (if available) and
-                                the trending movies at the time. <br><br>SineFlick is ready to give the best experience
-                                to watch with your loved ones.</p>
-                        </div>
-                    </div>
-                    <div class="about-section-2">
-                        <div class="info-about">
-                            <h4>Best Watching Experience</h4>
-                            <h3>1000+ Movies</h3>
-                            <p>Watch the best movies around the era</p>
-                        </div>
-                        <div class="info-about">
-                            <h4>Find the Platform That Suits You</h4>
-                            <h3>10+ Platform</h3>
-                            <p>Find and watch on a variety of platforms that you prefer</p>
-                        </div>
-                        <div class="info-about">
-                            <h4>Get Recommendations From Others</h4>
-                            <h3>1.000.000+ Users</h3>
-                            <p>Millions of users, and get to know each other's preferences</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <div class="menu-button active-menu" id="menu1">
+            <img
+              class="icon-image"
+              src="/img/AssetsOnProfile/user.png"
+              alt=""
+            /><button class="menu-text">Profile</button>
+          </div>
+          <div class="menu-button" id="menu2">
+            <img
+              class="icon-image"
+              src="/img/AssetsOnProfile/collection.png"
+              alt=""
+            /><button class="menu-text">Collection</button>
+          </div>
+          <div class="menu-button" id="menu3">
+            <img
+              class="icon-image"
+              src="/img/AssetsOnProfile/Info.png"
+              alt=""
+            /><button class="menu-text">About</button>
+          </div>
+          <div class="menu-button" id="menu4">
+            <img
+              class="icon-image"
+              src="/img/AssetsOnProfile/signOut.png"
+              alt=""
+            /><button
+              class="menu-text"
+              onclick="location.href='/pages/login.html'"
+            >
+              Log Out
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="right-side-page">
+        <div class="header-container">
+          <div class="header">
+            <div class="search-container">
+              <div class="search-bar">
+                <input type="text" placeholder="Search..." />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+            <div class="small-profile">
+              <div class="user-name">MovieFan123</div>
+              <div class="profile-icon-container">
+                <img
+                  class="profile-icon"
+                  src="/img/profile/profilePicture.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu active-content" id="page1">
+          <div class="container">
+            <div class="profile-sub-menus">
+              <div class="submenu" id="submenu1">
+                <h3 class="submenu-title">Account Settings</h3>
+                <p class="submenu-details">
+                  Details about your personal information
+                </p>
+              </div>
+              <div class="submenu" id="submenu2">
+                <h3 class="submenu-title">Notification</h3>
+                <p class="submenu-details">
+                  Details about your personal information
+                </p>
+              </div>
+              <div class="submenu" id="submenu3">
+                <h3 class="submenu-title">Password & Security</h3>
+                <p class="submenu-details">
+                  Details about your personal information
+                </p>
+              </div>
+            </div>
+
+            <div class="right-content" id="subContent1">
+              <div class="update-photo-container">
+                <div class="profile-picture">
+                  <img
+                    src="/img/profile/profilePicture.png"
+                    alt="Foto Profil"
+                  />
+                </div>
+                <div class="update-photo-text">
+                  <h3>MovieFan123</h3>
+                  <p>profilePicture.jpg</p>
+                </div>
+                <div class="update-photo-button-container">
+                  <button class="update-photo-button">update</button>
+                </div>
+              </div>
+              <div
+                class="form-update-container active-edit-profile"
+                id="edited"
+              >
+                <div class="form-update">
+                  <div class="edit-profile-button-container" id="edit-button">
+                    <img
+                      class="edit-profile-button"
+                      src="/img/AssetsOnProfile/Edit.png"
+                      alt=""
+                    />
+                  </div>
+                  <form action="">
+                    <div class="form-row-multiple">
+                      <div class="profile-update-input-1">
+                        <label for="">Full Name</label>
+                        <p class="profile-data">Si Pengguna</p>
+                      </div>
+                      <div class="profile-update-input-2">
+                        <label for="">Email Address</label>
+                        <p class="profile-data">siPengguna@gmail.com</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="profile-update-input">
+                        <label for="">Address</label>
+                        <p class="profile-data">Cibiru, Bandung</p>
+                      </div>
+                    </div>
+                    <div class="form-row-multiple">
+                      <div class="profile-update-input-1">
+                        <label for="">City</label>
+                        <p class="profile-data">Bandung</p>
+                      </div>
+                      <div class="profile-update-input-2">
+                        <label for="">State/Province</label>
+                        <p class="profile-data">Jawa Barat</p>
+                      </div>
+                    </div>
+                    <div class="form-row-multiple">
+                      <div class="profile-update-input-1">
+                        <label for="">Birth date</label>
+                        <p class="profile-data">08/04/2024</p>
+                      </div>
+                      <div class="profile-update-input-2">
+                        <label for="">Country</label>
+                        <p class="profile-data">Indonesia</p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="form-update-container" id="editing">
+                <div class="form-update">
+                  <form action="">
+                    <div
+                      class="edit-profile-button-editing-container"
+                      id="exit-button"
+                    >
+                      <img
+                        class="edit-profile-button-editing"
+                        src="/img/AssetsOnProfile/Close.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="form-row-multiple">
+                      <div class="profile-update-input-1">
+                        <label for="">Full Name*</label>
+                        <input
+                          class="profile-data-input"
+                          placeholder="Si Pengguna"
+                          type="text"
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div class="profile-update-input-2">
+                        <label for="">Email Address*</label>
+                        <input
+                          class="profile-data-input"
+                          placeholder="siPengguna@gmail.com"
+                          type="email"
+                          name=""
+                          id=""
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="profile-update-input">
+                        <label for="">Address</label>
+                        <input
+                          class="profile-data-input"
+                          placeholder="Cibiru, Bandung"
+                          type="text"
+                          name=""
+                          id=""
+                        />
+                      </div>
+                    </div>
+                    <div class="form-row-multiple">
+                      <div class="profile-update-input-1">
+                        <label for="">City</label>
+                        <input
+                          class="profile-data-input"
+                          placeholder="Bandung"
+                          type="text"
+                          name=""
+                          id=""
+                        />
+                      </div>
+                      <div class="profile-update-input-2">
+                        <label for="">State/Province</label>
+                        <input
+                          class="profile-data-input"
+                          placeholder="Jawa Barat"
+                          type="text"
+                          name=""
+                          id=""
+                        />
+                      </div>
+                    </div>
+                    <div class="form-row-multiple">
+                      <div class="profile-update-input-1">
+                        <label for="">Birth date</label>
+                        <input
+                          class="profile-data-input"
+                          type="date"
+                          name=""
+                          id=""
+                          placeholder="08/04/2024"
+                        />
+                      </div>
+                      <div class="profile-update-input-2">
+                        <label for="">Country</label>
+                        <input
+                          class="profile-data-input"
+                          placeholder="Indonesia"
+                          type="text"
+                          name=""
+                          id=""
+                        />
+                      </div>
+                    </div>
+                    <div class="submit-button-container" id="accept-button">
+                      <button class="submit-button" type="submit">
+                        Update Account
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="right-content" id="subContent2">
+              <div class="subContent23-title-and-icon">
+                <div class="subContent23-icon">
+                  <img src="/img/AssetsOnProfile/bell.png" alt="" />
+                </div>
+                <div class="subContent23-title">
+                  <h2 class="subContent23-general-title">
+                    Notification Settings
+                  </h2>
+                  <p class="subContent23-detailed-title">
+                    Select the kinds of notification to get about your activites
+                    and recommendations.
+                  </p>
+                </div>
+              </div>
+              <div class="email-notification">
+                <div class="email-notification-title">
+                  <h3 class="general-text">Email Notifications</h3>
+                  <p class="detailed-text">
+                    Get emails to find out what's going on when you're not
+                    online. You can turn these off.
+                  </p>
+                </div>
+                <div class="email-notification-content-container">
+                  <div class="email-notification-content" id="email-content-1">
+                    <div class="email-notification-button" id="email-button-1">
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                    <div class="email-notification-detail" id="email-detail-1">
+                      <h3 class="general-text">News and Updates</h3>
+                      <p class="detailed-text">
+                        News about products and feature updates
+                      </p>
+                    </div>
+                    <div
+                      class="email-notification-dropdown"
+                      id="email-dropdown-1"
+                    >
+                      <div class="dropdown">
+                        <button class="dropbtn">Suggested</button>
+                        <div class="dropdown-content">
+                          <a href="#">Pilihan 1</a>
+                          <a href="#">Pilihan 2</a>
+                          <a href="#">Pilihan 3</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="email-notification-content" id="email-content-2">
+                    <div class="email-notification-button" id="email-button-2">
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                    <div class="email-notification-detail" id="email-detail-2">
+                      <h3 class="general-text">Tips and Tutorials</h3>
+                      <p class="detailed-text">
+                        Tips on getting more out of Untitled
+                      </p>
+                    </div>
+                    <div
+                      class="email-notification-dropdown"
+                      id="email-dropdown-2"
+                    >
+                      <div class="dropdown">
+                        <button class="dropbtn">Suggested</button>
+                        <div class="dropdown-content">
+                          <a href="#">Pilihan 1</a>
+                          <a href="#">Pilihan 2</a>
+                          <a href="#">Pilihan 3</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="email-notification-content" id="email-content-3">
+                    <div class="email-notification-button" id="email-button-3">
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                    <div class="email-notification-detail" id="email-detail-3">
+                      <h3 class="general-text">Comments</h3>
+                      <p class="detailed-text">
+                        Comments on your posts and replies to comments
+                      </p>
+                    </div>
+                    <div
+                      class="email-notification-dropdown"
+                      id="email-dropdown-3"
+                    >
+                      <div class="dropdown">
+                        <button class="dropbtn">Suggested</button>
+                        <div class="dropdown-content">
+                          <a href="#">Pilihan 1</a>
+                          <a href="#">Pilihan 2</a>
+                          <a href="#">Pilihan 3</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="email-notification-content" id="email-content-4">
+                    <div class="email-notification-button" id="email-button-4">
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                    <div class="email-notification-detail" id="email-detail-4">
+                      <h3 class="general-text">Reminders</h3>
+                      <p class="detailed-text">
+                        These are notifications to remind you of updates you
+                        might have missed
+                      </p>
+                    </div>
+                    <div
+                      class="email-notification-dropdown"
+                      id="email-dropdown-4"
+                    >
+                      <div class="dropdown">
+                        <button class="dropbtn">Suggested</button>
+                        <div class="dropdown-content">
+                          <a href="#">Pilihan 1</a>
+                          <a href="#">Pilihan 2</a>
+                          <a href="#">Pilihan 3</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="push-notification">
+                <div class="email-notification-title">
+                  <h3 class="general-text">Push notifications</h3>
+                  <p class="detailed-text">
+                    Get push notifications in-app to find out what's going on
+                    when you're online.
+                  </p>
+                </div>
+                <div class="email-notification-content-container">
+                  <div class="email-notification-content" id="email-content-1">
+                    <div class="email-notification-button" id="email-button-1">
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                    <div class="email-notification-detail" id="email-detail-1">
+                      <h3 class="general-text">Comments</h3>
+                      <p class="detailed-text">
+                        Comments on your posts and replies to comments
+                      </p>
+                    </div>
+                    <div
+                      class="email-notification-dropdown"
+                      id="email-dropdown-1"
+                    >
+                      <div class="dropdown">
+                        <button class="dropbtn">Suggested</button>
+                        <div class="dropdown-content">
+                          <a href="#">Pilihan 1</a>
+                          <a href="#">Pilihan 2</a>
+                          <a href="#">Pilihan 3</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="email-notification-content" id="email-content-2">
+                    <div class="email-notification-button" id="email-button-2">
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                    <div class="email-notification-detail" id="email-detail-2">
+                      <h3 class="general-text">Reminders</h3>
+                      <p class="detailed-text">
+                        These are notifications to remind you of updates you
+                        might have missed
+                      </p>
+                    </div>
+                    <div
+                      class="email-notification-dropdown"
+                      id="email-dropdown-2"
+                    >
+                      <div class="dropdown">
+                        <button class="dropbtn">Suggested</button>
+                        <div class="dropdown-content">
+                          <a href="#">Pilihan 1</a>
+                          <a href="#">Pilihan 2</a>
+                          <a href="#">Pilihan 3</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="email-notification-content" id="email-content-3">
+                    <div class="email-notification-button" id="email-button-3">
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                    <div class="email-notification-detail" id="email-detail-3">
+                      <h3 class="general-text">More Activity about you</h3>
+                      <p class="detailed-text">
+                        These are notifications for posts on your profile, likes
+                        and other reactions to your posts, and more
+                      </p>
+                    </div>
+                    <div
+                      class="email-notification-dropdown"
+                      id="email-dropdown-3"
+                    >
+                      <div class="dropdown">
+                        <button class="dropbtn">Suggested</button>
+                        <div class="dropdown-content">
+                          <a href="#">Pilihan 1</a>
+                          <a href="#">Pilihan 2</a>
+                          <a href="#">Pilihan 3</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="advanced-filters">
+                <div class="advanced-filters-title">
+                  <h3 class="general-text">Advanced Filters</h3>
+                  <p class="detailed-text">
+                    Fine-tune the notifications you'd like to see - and those
+                    you don't.
+                  </p>
+                </div>
+                <div class="advanced-filters-button-container">
+                  <button class="advanced-filters-button">
+                    Set Up Filters
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="right-content" id="subContent3">
+              <div class="subContent23-title-and-icon">
+                <div class="subContent23-icon">
+                  <img src="/img/AssetsOnProfile/lock.png" alt="" />
+                </div>
+                <div class="subContent23-title">
+                  <h2 class="subContent23-general-title">Security</h2>
+                  <p class="subContent23-detailed-title">
+                    Settings and recommendations to keep your account secure
+                  </p>
+                </div>
+              </div>
+              <div class="securityAction">
+                <div>
+                  <h3 class="general-text">Set Account Security</h3>
+                  <p class="detailed-text">
+                    Strengthen your account security by modifying your password
+                    or security inquiries
+                  </p>
+                </div>
+                <div class="security-action-button-container">
+                  <button class="security-action-button">
+                    PROTECT YOUR ACCOUNT
+                  </button>
+                </div>
+              </div>
+              <div class="securityAction">
+                <div>
+                  <h3 class="general-text">Two Factor Authentication</h3>
+                  <p class="detailed-text">
+                    Add additional information to log into your account
+                  </p>
+                </div>
+                <div class="security-action-button-container">
+                  <button class="security-action-button">TURN ON</button>
+                </div>
+              </div>
+              <div class="securityAction">
+                <div>
+                  <h3 class="general-text">Activity History</h3>
+                  <p class="detailed-text">
+                    List of activites such as the last time it is logged in or
+                    the modification of your account
+                  </p>
+                </div>
+                <div class="security-action-button-container">
+                  <button class="security-action-button">
+                    MANAGE ACTIVITIES
+                  </button>
+                </div>
+              </div>
+              <div class="securityAction">
+                <div>
+                  <h3 class="general-text">Privacy Policy</h3>
+                  <p class="detailed-text">
+                    Get to know more on how the user's datas are managed by
+                    SineFlick
+                  </p>
+                </div>
+                <div class="security-action-button-container">
+                  <button class="security-action-button">LEARN MORE</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu" id="page2">
+          <div class="movie-list">
+            <h2 style="color: #f77e8c">Your Collection</h2>
+            <ul class="movies" id="movieContainer">
+              <!-- tempat list film dimasukkan secara dinamis -->
+            </ul>
+            <div class="button-container">
+              <button id="prevButton" disabled>Previous</button>
+              <button id="nextButton">Next</button>
+            </div>
+          </div>
+          <div class="nextButton">Next</div>
+        </div>
+
+        <div class="menu" id="page3">
+          <div class="container-about">
+            <div class="about-section-1">
+              <div class="image-about">
+                <img src="/img/logo/logo-transparent.png" alt="" />
+              </div>
+              <div class="text-about">
+                <p>
+                  SineFlick is an online platfrom which provides the most recent
+                  complete information about movies. With SineFlick, user can
+                  easily find any movies based on its title, genre, release
+                  date, even the actor and the director taking part in it.
+                  <br /><br />
+                  This platform also provides: movie synopsis, rating, review,
+                  genre, movie trailer (if available) and the trending movies at
+                  the time. <br /><br />SineFlick is ready to give the best
+                  experience to watch with your loved ones.
+                </p>
+              </div>
+            </div>
+            <div class="about-section-2">
+              <div class="info-about">
+                <h4>Best Watching Experience</h4>
+                <h3>1000+ Movies</h3>
+                <p>Watch the best movies around the era</p>
+              </div>
+              <div class="info-about">
+                <h4>Find the Platform That Suits You</h4>
+                <h3>10+ Platform</h3>
+                <p>Find and watch on a variety of platforms that you prefer</p>
+              </div>
+              <div class="info-about">
+                <h4>Get Recommendations From Others</h4>
+                <h3>1.000.000+ Users</h3>
+                <p>
+                  Millions of users, and get to know each other's preferences
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-
     <script src="/js/profileScript.js"></script>
-</body>
-
+  </body>
 </html>
