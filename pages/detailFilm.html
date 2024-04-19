@@ -608,8 +608,15 @@
               <p class="detail-film-duration">Duration: ${movie.time}</p>
               <p class="detail-film-release">Release Date: ${movie.year}</p>
               <div class="detail-film-buttons">
-                <button class="btn-1">Watch Trailer</button>
-                <button class="btn-2">Add to My List</button>
+                <button class="btn-1"><i class="fa-regular fa-play-circle"></i> Watch Trailer</button>
+                ${
+                  localStorage.getItem("myList") &&
+                  JSON.parse(localStorage.getItem("myList")).find(
+                    (item) => item === movie.id
+                  )
+                    ? `<button class="btn-1"><i class="fa-regular fa-bookmark"></i> Remove from My List</button>`
+                    : `<button class="btn-2" id="addToListButton" onclick="addToList('${movie.id}')"><i class="fa-regular fa-bookmark"></i> Add to My List</button>`
+                }
               </div>
             </div>
           `;
@@ -658,6 +665,36 @@
             )
             .join("");
         });
+
+      // add to my list
+      function addToList(id) {
+        // add to localStroage
+        let myList = localStorage.getItem("myList")
+          ? JSON.parse(localStorage.getItem("myList"))
+          : [];
+
+        if (myList.find((item) => item === id)) {
+          myList = myList.filter((item) => item !== id);
+          localStorage.setItem("myList", JSON.stringify(myList));
+          console.log("Removed from My List");
+        } else {
+          myList.push(id);
+          localStorage.setItem("myList", JSON.stringify(myList));
+          console.log("Added to My List");
+        }
+
+        // change button
+        const addToListButton = document.getElementById("addToListButton");
+        if (myList.find((item) => item === id)) {
+          addToListButton.innerHTML = `<i class="fa-regular fa-bookmark"></i> Remove from My List`;
+          addToListButton.classList.remove("btn-2");
+          addToListButton.classList.add("btn-1");
+        } else {
+          addToListButton.innerHTML = `<i class="fa-regular fa-bookmark"></i> Add to My List`;
+          addToListButton.classList.remove("btn-1");
+          addToListButton.classList.add("btn-2");
+        }
+      }
     </script>
   </body>
 </html>

@@ -35,6 +35,90 @@
     />
     <title>SineFlick</title>
   </head>
+  <style>
+    .light-mode {
+      background-color: #f5f5f5;
+      color: #000 !important;
+    }
+    .light-mode h1 {
+      color: #000 !important;
+    }
+    .light-mode .footer-container {
+      background-color: #f5f5f5;
+      color: #000 !important;
+    }
+
+    .light-mode h3 {
+      color: #000 !important;
+    }
+
+    .light-mode footer {
+      background-color: #f5f5f5;
+      color: #000 !important;
+    }
+
+    .light-mode .subs-content h3 {
+      color: #fff !important;
+    }
+
+    .light-mode .dropdown-menu {
+      background-color: #f5f5f5;
+    }
+
+    .light-mode .dropdown-menu a {
+      color: #000 !important;
+    }
+
+    .light-mode .dropdown-menu a:hover {
+      background-color: #e7e5e5 !important;
+      color: var(--pink) !important;
+    }
+
+    /* Hide dropdown menu by default */
+    .dropdown-menu {
+      display: none;
+    }
+
+    /* Show dropdown menu when hovering over dropdown-select */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Style the dropdown menu */
+    .dropdown-menu {
+      position: absolute;
+      background-color: var(--comment-box);
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-menu a {
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: var(--comment);
+    }
+
+    .dropdown-select {
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 600;
+      transition: color 0.25s ease-in-out;
+      -webkit-transition: color 0.25s ease-in-out;
+      -moz-transition: color 0.25s ease-in-out;
+      -ms-transition: color 0.25s ease-in-out;
+      -o-transition: color 0.25s ease-in-out;
+    }
+
+    .dropdown-select:hover {
+      color: var(--pink);
+    }
+  </style>
   <body>
     <!-- Navbar -->
     <div class="container">
@@ -75,6 +159,35 @@
                   >Animated Movies</a
                 >
               </li>
+              <!-- dropdown genre -->
+              <li class="dropdown">
+                <div class="dropdown-select">
+                  Genre <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a
+                    href="https://krisnasantosa15.github.io/sineflix/pages/categories.html#action"
+                    >Action</a
+                  >
+                  <a
+                    href="https://krisnasantosa15.github.io/sineflix/pages/categories.html#comedy"
+                    >Comedy</a
+                  >
+                  <a
+                    href="https://krisnasantosa15.github.io/sineflix/pages/categories.html#crime"
+                    >Crime</a
+                  >
+                  <a
+                    href="https://krisnasantosa15.github.io/sineflix/pages/categories.html#sciFi"
+                    >Sci-Fi</a
+                  >
+                  <a
+                    href="https://krisnasantosa15.github.io/sineflix/pages/categories.html#thriller"
+                    >Thriller</a
+                  >
+                </div>
+              </li>
+
               <li>
                 <a
                   href="https://krisnasantosa15.github.io/sineflix/pages/myList.html"
@@ -109,6 +222,14 @@
                     >
                   </li>
                 </ul>
+                <!-- Light Mode -->
+                <li>
+                  <i
+                    class="fa-solid fa-moon"
+                    id="light-mode"
+                    onclick="lightMode()"
+                  ></i>
+                </li>
               </ul>
             </div>
           </div>
@@ -401,7 +522,7 @@
       </div>
 
       <div class="movies-card" id="movieContainer"></div>
-      <div class="button-more">
+      <div class="button-more" style="margin-top: 20px">
         <a
           href="https://krisnasantosa15.github.io/sineflix/pages/movies.html"
           class="btn-1"
@@ -605,5 +726,21 @@
     <script src="https://krisnasantosa15.github.io/sineflix/js/owl.carousel.min.js"></script>
     <script src="https://krisnasantosa15.github.io/sineflix/js/swiper-bundle.min.js"></script>
     <script src="https://krisnasantosa15.github.io/sineflix/js/main.js"></script>
+    <script>
+      function lightMode() {
+        var element = document.body;
+        element.classList.toggle("light-mode");
+
+        // change icon
+        var icon = document.getElementById("light-mode");
+        if (icon.classList.contains("fa-moon")) {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+      }
+    </script>
   </body>
 </html>

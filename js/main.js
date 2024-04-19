@@ -235,7 +235,7 @@ async function getSearchSuggestions(keyword) {
     filteredMovies.forEach((movie) => {
       const link = document.createElement("a");
       link.textContent = `${movie.title} - ${movie.type}`;
-      link.href = `/pages/detailFilm.html?id=${movie.id}`;
+      link.href = `https://krisnasantosa15.github.io/sineflix/pages/detailFilm.html?id=${movie.id}`;
 
       const suggestionElement = document.createElement("div");
       suggestionElement.addEventListener("click", () => {

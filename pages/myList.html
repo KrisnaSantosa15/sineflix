@@ -551,7 +551,8 @@
     <script src="https://krisnasantosa15.github.io/sineflix/js/owl.carousel.min.js"></script>
     <script src="https://krisnasantosa15.github.io/sineflix/js/swiper-bundle.min.js"></script>
     <script>
-      const myList = ["ANIM3", "TS5", "MOV8", "TS6", "MOV9"];
+      // My List from localStorage
+      const myList = JSON.parse(localStorage.getItem("myList")) || [];
       window.onscroll = function () {
         const header = document.querySelector("header");
         const fixedNav = header.offsetTop;
