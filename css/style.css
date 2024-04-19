@@ -496,6 +496,7 @@ body{
 }
 
 .card-img img{
+    height: inherit !important;
     width: 100%;
     filter: brightness(0.6); /* darken the image */
     transition: filter 0.25s ease-in-out;

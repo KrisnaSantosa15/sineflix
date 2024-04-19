@@ -16,6 +16,90 @@
     <link rel="stylesheet" href="/css/style.css" />
     <title>SineFlick</title>
   </head>
+  <style>
+    .light-mode {
+      background-color: #f5f5f5;
+      color: #000 !important;
+    }
+    .light-mode h1 {
+      color: #000 !important;
+    }
+    .light-mode .footer-container {
+      background-color: #f5f5f5;
+      color: #000 !important;
+    }
+
+    .light-mode h3 {
+      color: #000 !important;
+    }
+
+    .light-mode footer {
+      background-color: #f5f5f5;
+      color: #000 !important;
+    }
+
+    .light-mode .subs-content h3 {
+      color: #fff !important;
+    }
+
+    .light-mode .dropdown-menu {
+      background-color: #f5f5f5;
+    }
+
+    .light-mode .dropdown-menu a {
+      color: #000 !important;
+    }
+
+    .light-mode .dropdown-menu a:hover {
+      background-color: #e7e5e5 !important;
+      color: var(--pink) !important;
+    }
+
+    /* Hide dropdown menu by default */
+    .dropdown-menu {
+      display: none;
+    }
+
+    /* Show dropdown menu when hovering over dropdown-select */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Style the dropdown menu */
+    .dropdown-menu {
+      position: absolute;
+      background-color: var(--comment-box);
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-menu a {
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: var(--comment);
+    }
+
+    .dropdown-select {
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 600;
+      transition: color 0.25s ease-in-out;
+      -webkit-transition: color 0.25s ease-in-out;
+      -moz-transition: color 0.25s ease-in-out;
+      -ms-transition: color 0.25s ease-in-out;
+      -o-transition: color 0.25s ease-in-out;
+    }
+
+    .dropdown-select:hover {
+      color: var(--pink);
+    }
+  </style>
   <body>
     <!-- Navbar -->
     <div class="container">
@@ -37,6 +121,19 @@
               <li><a href="/pages/movies.html">Movies</a></li>
               <li><a href="/pages/tvSeries.html">TV Series</a></li>
               <li><a href="/pages/animatedMovies.html">Animated Movies</a></li>
+              <!-- dropdown genre -->
+              <li class="dropdown">
+                <div class="dropdown-select">
+                  Genre <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="/pages/categories.html#action">Action</a>
+                  <a href="/pages/categories.html#comedy">Comedy</a>
+                  <a href="/pages/categories.html#crime">Crime</a>
+                  <a href="/pages/categories.html#sciFi">Sci-Fi</a>
+                  <a href="/pages/categories.html#thriller">Thriller</a>
+                </div>
+              </li>
               <li><a href="/pages/myList.html">My List</a></li>
               <div class="close-btn" id="close">
                 <i class="fa-solid fa-xmark"></i>
@@ -56,6 +153,14 @@
                   </li>
                   <li><a href="/pages/login.html" class="btn-1">Login</a></li>
                 </ul>
+                <!-- Light Mode -->
+                <li>
+                  <i
+                    class="fa-solid fa-moon"
+                    id="light-mode"
+                    onclick="lightMode()"
+                  ></i>
+                </li>
               </ul>
             </div>
           </div>
@@ -89,240 +194,7 @@
 
     <!-- Slider Hero Section -->
     <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide slide-1">
-          <div class="swiper-container">
-            <div class="type">
-              <p>Mystery</p>
-              <div class="line"></div>
-              <p>Action</p>
-              <div class="line"></div>
-              <p>Drama</p>
-            </div>
-            <div class="movie-title">
-              <h2>UNCHARTED</h2>
-              <p>
-                Street-smart Nathan Drake (Tom Holland) is recruited by seasoned
-                treasure hunter Victor "Sully" Sullivan (Mark Wahlberg) to
-                recover a fortune amassed by Ferdinand Magellan and lost 500
-                years ago by the House of Moncada. What starts as a heist job
-                for the duo becomes a globe-trotting, white-knuckle race to
-                reach the prize before the ruthless Santiago Moncada (Antonio
-                Banderas), who believes he and his family are the rightful
-                heirs. If Nate and Sully can decipher the clues and solve one of
-                the world's oldest mysteries, they stand to find $5 billion in
-                treasure and perhaps even Nate's long-lost brother...but only if
-                they can learn to work together.
-              </p>
-            </div>
-            <div class="movie-rating">
-              <div>
-                <p>IMDb: 6,3</p>
-              </div>
-              <div>
-                <p>1 h 56 m</p>
-              </div>
-              <div class="rect">
-                <p>10+</p>
-              </div>
-            </div>
-            <div class="movie-btn">
-              <button class="btn-1">
-                <i class="fa-regular fa-play-circle"></i> Watch Trailer
-              </button>
-              <button class="btn-2">
-                <i class="fa-regular fa-bookmark"></i> Add To List
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide slide-2">
-          <div class="swiper-container">
-            <div class="type">
-              <p>Sci-Fi</p>
-              <div class="line"></div>
-              <p>Action</p>
-            </div>
-            <div class="movie-title">
-              <h2>MATRIX RESURRECTION</h2>
-              <p>
-                Suffering from palpable delusions, burnt-out Thomas Anderson,
-                the award-winning creator of The Matrix (1999) video game
-                series, now relies on potent blue pills to keep his inner demons
-                at bay. Then, amid inexplicable, reality-defying visions, Thomas
-                spots Tiffany, a familiar-looking perfect stranger evoking
-                strange emotions, and his already fragile mental state starts to
-                deteriorate. As Mr Anderson yearns for an explanation while
-                teetering on the brink of depression, once more, he confronts a
-                pressing dilemma and the burden of choice. On the one hand,
-                blissful ignorance guarantees the illusion of safety. On the
-                other hand, the unbearable truth of reality can only mean one
-                thing: the elaborate Matrix goes beyond the limits of
-                imagination. But, somehow, Thomas already knows what he has to
-                do. However, does he want to know how deep the rabbit hole goes?
-              </p>
-            </div>
-            <div class="movie-rating">
-              <div>
-                <p>IMDb: 5,7</p>
-              </div>
-              <div>
-                <p>2 h 28 m</p>
-              </div>
-              <div class="rect">
-                <p>18+</p>
-              </div>
-            </div>
-            <div class="movie-btn">
-              <button class="btn-1">
-                <i class="fa-regular fa-play-circle"></i> Watch Trailer
-              </button>
-              <button class="btn-2">
-                <i class="fa-regular fa-bookmark"></i> Add To List
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide slide-3">
-          <div class="swiper-container">
-            <div class="type">
-              <p>Adventure</p>
-              <div class="line"></div>
-              <p>Action</p>
-              <div class="line"></div>
-              <p>Comedy</p>
-            </div>
-            <div class="movie-title">
-              <h2>THOR LOVE AND THUNDER</h2>
-              <p>
-                Thor: Love and Thunder is a 2022 American superhero film based
-                on Marvel Comics featuring the character Thor. Produced by
-                Marvel Studios and distributed by Walt Disney Studios Motion
-                Pictures, it is the sequel to Thor: Ragnarok (2017) and the 29th
-                film in the Marvel Cinematic Universe (MCU). The film was
-                directed by Taika Waititi, who co-wrote the screenplay with
-                Jennifer Kaytin Robinson, and stars Chris Hemsworth as Thor
-                alongside Christian Bale, Tessa Thompson, Jaimie Alexander,
-                Waititi, Russell Crowe, and Natalie Portman. In the film, Thor
-                attempts to find inner peace, but must return to action and
-                recruit Valkyrie (Thompson), Korg (Waititi), and Jane Foster
-                (Portman)—who is now the Mighty Thor—to stop Gorr the God
-                Butcher (Bale) from eliminating all gods.
-              </p>
-            </div>
-            <div class="movie-rating">
-              <div>
-                <p>IMDb: 6,3</p>
-              </div>
-              <div>
-                <p>1 h 58 m</p>
-              </div>
-              <div class="rect">
-                <p>10+</p>
-              </div>
-            </div>
-            <div class="movie-btn">
-              <button class="btn-1">
-                <i class="fa-regular fa-play-circle"></i> Watch Trailer
-              </button>
-              <button class="btn-2">
-                <i class="fa-regular fa-bookmark"></i> Add To List
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide slide-4">
-          <div class="swiper-container">
-            <div class="type">
-              <p>Mystery</p>
-              <div class="line"></div>
-              <p>Action</p>
-              <div class="line"></div>
-              <p>Drama</p>
-            </div>
-            <div class="movie-title">
-              <h2>THE BLUE PALE</h2>
-              <p>
-                The Pale Blue Eye is a 2022 American mystery thriller film
-                written and directed by Scott Cooper, adapted from the 2003
-                novel of the same name by Louis Bayard. The film features an
-                ensemble cast that includes Christian Bale, Harry Melling,
-                Gillian Anderson, Lucy Boynton, Charlotte Gainsbourg, Toby
-                Jones, Harry Lawtey, Simon McBurney, Timothy Spall, and Robert
-                Duvall. Its plot follows veteran detective Augustus Landor in
-                1830 West Point, New York, as he investigates a series of
-                murders at the United States Military Academy with the aid of
-                Edgar Allan Poe, a young military cadet.
-              </p>
-            </div>
-            <div class="movie-rating">
-              <div>
-                <p>IMDb: 6,7</p>
-              </div>
-              <div>
-                <p>2 h 8 m</p>
-              </div>
-              <div class="rect">
-                <p>18+</p>
-              </div>
-            </div>
-            <div class="movie-btn">
-              <button class="btn-1">
-                <i class="fa-regular fa-play-circle"></i> Watch Trailer
-              </button>
-              <button class="btn-2">
-                <i class="fa-regular fa-bookmark"></i> Add To List
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide slide-5">
-          <div class="swiper-container">
-            <div class="type">
-              <p>Crime</p>
-              <div class="line"></div>
-              <p>Action</p>
-              <div class="line"></div>
-              <p>Drama</p>
-            </div>
-            <div class="movie-title">
-              <h2>THE BATMAN</h2>
-              <p>
-                Street-smart Nathan Drake (Tom Holland) is recruited by seasoned
-                treasure hunter Victor "Sully" Sullivan (Mark Wahlberg) to
-                recover a fortune amassed by Ferdinand Magellan and lost 500
-                years ago by the House of Moncada. What starts as a heist job
-                for the duo becomes a globe-trotting, white-knuckle race to
-                reach the prize before the ruthless Santiago Moncada (Antonio
-                Banderas), who believes he and his family are the rightful
-                heirs. If Nate and Sully can decipher the clues and solve one of
-                the world's oldest mysteries, they stand to find $5 billion in
-                treasure and perhaps even Nate's long-lost brother...but only if
-                they can learn to work together.
-              </p>
-            </div>
-            <div class="movie-rating">
-              <div>
-                <p>IMDb: 7,8</p>
-              </div>
-              <div>
-                <p>2 h 56 m</p>
-              </div>
-              <div class="rect">
-                <p>18+</p>
-              </div>
-            </div>
-            <div class="movie-btn">
-              <button class="btn-1">
-                <i class="fa-regular fa-play-circle"></i> Watch Trailer
-              </button>
-              <button class="btn-2">
-                <i class="fa-regular fa-bookmark"></i> Add To List
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="swiper-wrapper" id="heroSection"></div>
     </div>
 
     <!-- New releases -->
@@ -345,7 +217,7 @@
       </div>
 
       <div class="movies-card" id="movieContainer"></div>
-      <div class="button-more">
+      <div class="button-more" style="margin-top: 20px">
         <a href="/pages/movies.html" class="btn-1">
           <span>Discover More&nbsp;</span>
           <i class="fa-regular fa-compass"></i>
@@ -457,5 +329,123 @@
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/swiper-bundle.min.js"></script>
     <script src="/js/main.js"></script>
+    <script>
+      function lightMode() {
+        var element = document.body;
+        element.classList.toggle("light-mode");
+
+        // change icon
+        var icon = document.getElementById("light-mode");
+        if (icon.classList.contains("fa-moon")) {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+      }
+
+      // Fetch data from data.json
+      fetch("/js/data/data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const heroSection = document.getElementById("heroSection");
+          let number = 1;
+
+          // Filter out only the items with type "HeroSection"
+          const heroSectionItems = data.items.filter(
+            (item) => item.type === "HeroSection"
+          );
+
+          // Loop through each item in the filtered data
+          heroSectionItems.forEach((item) => {
+            // Create a swiper-slide element
+            const swiperSlide = document.createElement("div");
+            swiperSlide.classList.add("swiper-slide", `slide-${number++}`);
+
+            // Construct HTML structure dynamically based on item data
+            swiperSlide.innerHTML = `
+        <div class="swiper-container">
+          <div class="type">
+            ${item.genre
+              .map((genre) => `<p>${genre}</p><div class="line"></div>`)
+              .join("")}
+          </div>
+          <div class="movie-title">
+            <h2>${item.title}</h2>
+            <p>${item.description}</p>
+          </div>
+          <div class="movie-rating">
+            <div>
+              <p>IMDb: ${item.rating}</p>
+            </div>
+            <div>
+              <p>${item.time}</p>
+            </div>
+            <div class="rect">
+              <p>${item.age}</p>
+            </div>
+          </div>
+          <div class="movie-btn">
+            <button class="btn-1">
+              <i class="fa-regular fa-play-circle"></i> Watch Trailer
+            </button>
+            ${
+              localStorage.getItem("myList") &&
+              JSON.parse(localStorage.getItem("myList")).find(
+                (itemL) => itemL === item.id
+              )
+                ? `<button class="btn-1 addToListButton" id="hs-${item.id}" onclick="addToList(this,'${item.id}')"><i class="fa-regular fa-bookmark"></i> Remove from My List</button>`
+                : `<button class="btn-2 addToListButton" id="hs-${item.id}" onclick="addToList(this,'${item.id}')"><i class="fa-regular fa-bookmark"></i> Add to My List</button>`
+            }
+          </div>
+        </div>
+      `;
+
+            // Append the constructed swiper-slide to heroSection
+            heroSection.appendChild(swiperSlide);
+          });
+
+          // Initialize Swiper after data population
+          const swiper = new Swiper(".swiper-container", {
+            // Add Swiper options here
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          });
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+
+      function addToList(btn, id) {
+        // add to localStroage
+        let myList = localStorage.getItem("myList")
+          ? JSON.parse(localStorage.getItem("myList"))
+          : [];
+
+        if (myList.find((item) => item === id)) {
+          myList = myList.filter((item) => item !== id);
+          localStorage.setItem("myList", JSON.stringify(myList));
+          console.log("Removed from My List");
+        } else {
+          myList.push(id);
+          localStorage.setItem("myList", JSON.stringify(myList));
+          console.log("Added to My List");
+        }
+
+        // change button
+        const addToListButton = document.querySelector("#" + btn.id);
+        if (myList.find((item) => item === id)) {
+          addToListButton.innerHTML = `<i class="fa-regular fa-bookmark"></i> Remove from My List`;
+          addToListButton.classList.remove("btn-2");
+          addToListButton.classList.add("btn-1");
+        } else {
+          addToListButton.innerHTML = `<i class="fa-regular fa-bookmark"></i> Add to My List`;
+          addToListButton.classList.remove("btn-1");
+          addToListButton.classList.add("btn-2");
+        }
+      }
+    </script>
   </body>
 </html>

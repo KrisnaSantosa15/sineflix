@@ -152,48 +152,46 @@
       }
 
       .additional-info-container {
-			
-			color: #f2f2f2;
-			padding: 20px;
-			margin: 20px;
-			border-radius: 15px;
-		}
+        color: #f2f2f2;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 15px;
+      }
 
-		.section-title {
-			font-family: 'Arial', sans-serif;
-			font-size: 32px;
-			font-weight: bold;
-			text-align: center;
-			margin-bottom: 20px;
-		}
+      .section-title {
+        font-family: "Arial", sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-		.info-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			gap: 20px;
-		}
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
 
-		.info-item {
-			background-color: #161722;
-			padding: 20px;
-			border-radius: 10px;
-		}
+      .info-item {
+        background-color: #161722;
+        padding: 20px;
+        border-radius: 10px;
+      }
 
-		.info-item h3 {
-			font-family: 'Arial', sans-serif;
-			font-size: 24px;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
+      .info-item h3 {
+        font-family: "Arial", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
 
-		.info-item ul, .info-item p {
-			font-family: 'Arial', sans-serif;
-			font-size: 16px;
-			line-height: 1.6;
-			color: #f2f2f2;
-		}
-
-
+      .info-item ul,
+      .info-item p {
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #f2f2f2;
+      }
     </style>
     <title>SineFlick</title>
   </head>
@@ -280,9 +278,7 @@
 
     <div class="trailer-container">
       <div class="trailer">
-        <div 
-          class="iframe-wrapper">
-        </div>
+        <div class="iframe-wrapper"></div>
       </div>
     </div>
 
@@ -309,33 +305,49 @@
     </div>
 
     <section class="additional-info-container">
-			<h2 class="section-title">More About SPIDER-MAN No Way Home</h2>
-			<div class="info-grid">
-				<div class="info-item">
-					<h3>Storyline</h3>
-					<ul>
-						<p>Peter Parker's secret identity is revealed to the entire world. Desperate for help, Peter turns to Doctor Strange to make the world forget that he is Spider-Man. The spell goes horribly wrong and shatters the multiverse, bringing in monstrous villains that could destroy the world.</p>
-					</ul>
-				</div>
+      <h2 class="section-title">More About SPIDER-MAN No Way Home</h2>
+      <div class="info-grid">
         <div class="info-item">
-					<h3>Cast</h3>
-					<ul>
-						<li>Tom Holland as Spiderman</li>
-						<li>Zendaya as MJ</li>
-						<li>Benedict Cumberbatch as Doctor Strane</li>
-					</ul>
-				</div>
-				<div class="info-item">
-					<h3>Quotes</h3>
-					<li>Peter Parker: If I can fix what happened to you then when you go back things will be different and you might not die fighting Spider-Man.</li>
+          <h3>Storyline</h3>
+          <ul>
+            <p>
+              Peter Parker's secret identity is revealed to the entire world.
+              Desperate for help, Peter turns to Doctor Strange to make the
+              world forget that he is Spider-Man. The spell goes horribly wrong
+              and shatters the multiverse, bringing in monstrous villains that
+              could destroy the world.
+            </p>
+          </ul>
+        </div>
+        <div class="info-item">
+          <h3>Cast</h3>
+          <ul>
+            <li>Tom Holland as Spiderman</li>
+            <li>Zendaya as MJ</li>
+            <li>Benedict Cumberbatch as Doctor Strane</li>
+          </ul>
+        </div>
+        <div class="info-item">
+          <h3>Quotes</h3>
+          <li>
+            Peter Parker: If I can fix what happened to you then when you go
+            back things will be different and you might not die fighting
+            Spider-Man.
+          </li>
           <li>Max Dillon: What do you mean fix us?</li>
           <li>Peter Parker: Look, our technology is advanced...</li>
-          <li>Norman Osborn: I can help you. You know, I'm something of a scientist myself. Octavius knows what I can do.</li>
+          <li>
+            Norman Osborn: I can help you. You know, I'm something of a
+            scientist myself. Octavius knows what I can do.
+          </li>
           <li>Otto Octavius: Fix? You mean like a dog? I refuse.</li>
-          <li>Peter Parker: I can't promise you guys anything but at least this way you actually get to go home and have a chance, a second chance. </li>
-				</div>
-			</div>
-		</section>
+          <li>
+            Peter Parker: I can't promise you guys anything but at least this
+            way you actually get to go home and have a chance, a second chance.
+          </li>
+        </div>
+      </div>
+    </section>
 
     <div class="slider-container">
       <div class="slider-content">
@@ -426,7 +438,7 @@
     <script src="/js/swiper-bundle.min.js"></script>
     <script src="/js/main.js"></script>
     <script>
-      const queryString = window.location.search;   
+      const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
       const movieId = urlParams.get("id");
 
@@ -434,8 +446,10 @@
         .then((response) => response.json())
         .then((data) => {
           const movie = data.items.find((item) => item.id === movieId);
-          const trailerContainer = document.querySelector(".trailer .iframe-wrapper");
-            trailerContainer.innerHTML = `
+          const trailerContainer = document.querySelector(
+            ".trailer .iframe-wrapper"
+          );
+          trailerContainer.innerHTML = `
                 <iframe src="${movie.trailer}" title="${movie.title} Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             `;
 
@@ -458,8 +472,15 @@
               <p class="detail-film-duration">Duration: ${movie.time}</p>
               <p class="detail-film-release">Release Date: ${movie.year}</p>
               <div class="detail-film-buttons">
-                <button class="btn-1">Watch Trailer</button>
-                <button class="btn-2">Add to My List</button>
+                <button class="btn-1"><i class="fa-regular fa-play-circle"></i> Watch Trailer</button>
+                ${
+                  localStorage.getItem("myList") &&
+                  JSON.parse(localStorage.getItem("myList")).find(
+                    (item) => item === movie.id
+                  )
+                    ? `<button class="btn-1"><i class="fa-regular fa-bookmark"></i> Remove from My List</button>`
+                    : `<button class="btn-2" id="addToListButton" onclick="addToList('${movie.id}')"><i class="fa-regular fa-bookmark"></i> Add to My List</button>`
+                }
               </div>
             </div>
           `;
@@ -508,6 +529,36 @@
             )
             .join("");
         });
+
+      // add to my list
+      function addToList(id) {
+        // add to localStroage
+        let myList = localStorage.getItem("myList")
+          ? JSON.parse(localStorage.getItem("myList"))
+          : [];
+
+        if (myList.find((item) => item === id)) {
+          myList = myList.filter((item) => item !== id);
+          localStorage.setItem("myList", JSON.stringify(myList));
+          console.log("Removed from My List");
+        } else {
+          myList.push(id);
+          localStorage.setItem("myList", JSON.stringify(myList));
+          console.log("Added to My List");
+        }
+
+        // change button
+        const addToListButton = document.getElementById("addToListButton");
+        if (myList.find((item) => item === id)) {
+          addToListButton.innerHTML = `<i class="fa-regular fa-bookmark"></i> Remove from My List`;
+          addToListButton.classList.remove("btn-2");
+          addToListButton.classList.add("btn-1");
+        } else {
+          addToListButton.innerHTML = `<i class="fa-regular fa-bookmark"></i> Add to My List`;
+          addToListButton.classList.remove("btn-1");
+          addToListButton.classList.add("btn-2");
+        }
+      }
     </script>
   </body>
 </html>
