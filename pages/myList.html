@@ -539,42 +539,42 @@
 
             // Construct HTML structure dynamically based on item data
             swiperSlide.innerHTML = `
-    <div class="swiper-container">
-      <div class="type">
-        ${item.genre
-          .map((genre) => `<p>${genre}</p><div class="line"></div>`)
-          .join("")}
+  <div class="swiper-container">
+    <div class="type">
+      ${item.genre
+        .map((genre) => `<p>${genre}</p><div class="line"></div>`)
+        .join("")}
+    </div>
+    <div class="movie-title">
+      <h2>${item.title}</h2>
+      <p>${item.description}</p>
+    </div>
+    <div class="movie-rating">
+      <div>
+        <p>IMDb: ${item.rating}</p>
       </div>
-      <div class="movie-title">
-        <h2>${item.title}</h2>
-        <p>${item.description}</p>
+      <div>
+        <p>${item.time}</p>
       </div>
-      <div class="movie-rating">
-        <div>
-          <p>IMDb: ${item.rating}</p>
-        </div>
-        <div>
-          <p>${item.time}</p>
-        </div>
-        <div class="rect">
-          <p>${item.age}</p>
-        </div>
-      </div>
-      <div class="movie-btn">
-        <button class="btn-1">
-          <i class="fa-regular fa-play-circle"></i> Watch Trailer
-        </button>
-        ${
-          localStorage.getItem("myList") &&
-          JSON.parse(localStorage.getItem("myList")).find(
-            (itemL) => itemL === item.id
-          )
-            ? `<button class="btn-1"><i class="fa-regular fa-bookmark"></i> Remove from My List</button>`
-            : `<button class="btn-2" id="addToListButton" onclick="addToList('${item.id}')"><i class="fa-regular fa-bookmark"></i> Add to My List</button>`
-        }
+      <div class="rect">
+        <p>${item.age}</p>
       </div>
     </div>
-  `;
+    <div class="movie-btn">
+      <button class="btn-1">
+        <i class="fa-regular fa-play-circle"></i> Watch Trailer
+      </button>
+      ${
+        localStorage.getItem("myList") &&
+        JSON.parse(localStorage.getItem("myList")).find(
+          (itemL) => itemL === item.id
+        )
+          ? `<button class="btn-1 addToListButton" id="hs-${item.id}" onclick="addToList(this,'${item.id}')"><i class="fa-regular fa-bookmark"></i> Remove from My List</button>`
+          : `<button class="btn-2 addToListButton" id="hs-${item.id}" onclick="addToList(this,'${item.id}')"><i class="fa-regular fa-bookmark"></i> Add to My List</button>`
+      }
+    </div>
+  </div>
+`;
 
             // Append the constructed swiper-slide to heroSection
             heroSection.appendChild(swiperSlide);
@@ -591,6 +591,35 @@
           });
         })
         .catch((error) => console.error("Error fetching data:", error));
+
+      function addToList(btn, id) {
+        // add to localStroage
+        let myList = localStorage.getItem("myList")
+          ? JSON.parse(localStorage.getItem("myList"))
+          : [];
+
+        if (myList.find((item) => item === id)) {
+          myList = myList.filter((item) => item !== id);
+          localStorage.setItem("myList", JSON.stringify(myList));
+          console.log("Removed from My List");
+        } else {
+          myList.push(id);
+          localStorage.setItem("myList", JSON.stringify(myList));
+          console.log("Added to My List");
+        }
+
+        // change button
+        const addToListButton = document.querySelector("#" + btn.id);
+        if (myList.find((item) => item === id)) {
+          addToListButton.innerHTML = `<i class="fa-regular fa-bookmark"></i> Remove from My List`;
+          addToListButton.classList.remove("btn-2");
+          addToListButton.classList.add("btn-1");
+        } else {
+          addToListButton.innerHTML = `<i class="fa-regular fa-bookmark"></i> Add to My List`;
+          addToListButton.classList.remove("btn-1");
+          addToListButton.classList.add("btn-2");
+        }
+      }
     </script>
   </body>
 </html>
