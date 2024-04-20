@@ -1,3 +1,15 @@
+const logoutButton = document.querySelector("#menu4");
+logoutButton.addEventListener("click", function () {
+  const isLogout = confirm("Anda yakin ingin keluar?");
+
+  if (isLogout) {
+    location.href = "https://krisnasantosa15.github.io/sineflix/index.html";
+  } else {
+    location.href =
+      "https://krisnasantosa15.github.io/sineflix/pages/profile.html";
+  }
+});
+
 const buttons = [
   document.getElementById("menu1"),
   document.getElementById("menu2"),
@@ -5,26 +17,10 @@ const buttons = [
 ];
 
 const contents = [
-  document.getElementById("page1"),
+  document.getElementById("submenu"),
   document.getElementById("page2"),
   document.getElementById("page3"),
-  document.getElementById("page4"),
 ];
-
-buttons.forEach((button, index) => {
-  button.addEventListener("click", function () {
-    contents[0].classList.remove("active-content");
-    for (let i = 0; i < buttons.length; i++) {
-      if (i === index) {
-        buttons[i].classList.add("active-menu");
-        contents[i].classList.add("active-content");
-      } else {
-        buttons[i].classList.remove("active-menu");
-        contents[i].classList.remove("active-content");
-      }
-    }
-  });
-});
 
 const subButtons = [
   document.getElementById("submenu1"),
@@ -36,6 +32,30 @@ const subContents = [
   document.getElementById("subContent2"),
   document.getElementById("subContent3"),
 ];
+
+buttons.forEach((button, index) => {
+  button.addEventListener("click", function () {
+    for (let i = 0; i < buttons.length; i++) {
+      if (i === index && i === 0) {
+        buttons[i].classList.add("active-menu");
+        contents[i].classList.add("active-submenu-list");
+        subButtons[0].classList.add("active-submenu");
+        subContents[0].classList.add("active-subContent");
+      } else if (i === index && i >= 1) {
+        buttons[i].classList.add("active-menu");
+        contents[i].classList.add("active-content");
+        subButtons[i].classList.remove("active-submenu");
+        subContents[i].classList.remove("active-subContent");
+      } else {
+        buttons[i].classList.remove("active-menu");
+        contents[i].classList.remove("active-content");
+        contents[i].classList.remove("active-submenu-list");
+        subButtons[i].classList.remove("active-submenu");
+        subContents[i].classList.remove("active-subContent");
+      }
+    }
+  });
+});
 
 subButtons.forEach((button, index) => {
   button.addEventListener("click", function () {
@@ -79,103 +99,100 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevButton = document.getElementById("prevButton");
   const nextButton = document.getElementById("nextButton");
   const movies = [
-    // Add movie data dynamically
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie1.jpg",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie1.jpg",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie2.jpg",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie2.jpg",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie3.jpg",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie3.jpg",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie4.jpeg",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie4.jpeg",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie5.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie5.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie6.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie6.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie7.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie7.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie8.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie8.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie9.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie9.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie10.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie10.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie11.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie11.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie12.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie12.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie13.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie13.png",
     },
     {
       title: "Movie 1",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie14.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie14.png",
     },
     {
       title: "Movie 1",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie15.png",
+        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie15.png",
     },
-    // Add more movies as needed
   ];
   const moviesPerPage = 10;
   let currentPage = 0;
 
-  // Function to create movie elements
   function createMovieElement(movie) {
     const li = document.createElement("li");
     li.classList.add("movie");
@@ -198,12 +215,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return li;
   }
 
-  // Function to display movies for the current page
   function displayMovies() {
     const start = currentPage * moviesPerPage;
     const end = start + moviesPerPage;
 
-    // Clear existing movies
     movieContainer.innerHTML = "";
 
     for (let i = start; i < end && i < movies.length; i++) {
@@ -212,35 +227,19 @@ document.addEventListener("DOMContentLoaded", function () {
       movieContainer.appendChild(movieElement);
     }
 
-    // Enable/disable prev/next buttons
     prevButton.disabled = currentPage === 0;
     nextButton.disabled = end >= movies.length;
   }
 
-  // Initial display
   displayMovies();
 
-  // Next button click event
   nextButton.addEventListener("click", function () {
     currentPage++;
     displayMovies();
   });
 
-  // Previous button click event
   prevButton.addEventListener("click", function () {
     currentPage--;
     displayMovies();
-  });
-
-  const logoutButton = document.querySelector("#menu4 button");
-  logoutButton.addEventListener("click", function () {
-    // Pesan Konfirmasi Logout
-    const isLogout = confirm("Anda yakin ingin keluar?");
-    // Jika menekan tombol "OK" akan diarahkan ke homepage
-    if (isLogout) {
-      location.href = "/index.html";
-    } else {
-      location.href = "/pages/profile.html";
-    }
   });
 });
