@@ -103,91 +103,91 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie1.jpg",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie1.jpg",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie2.jpg",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie2.jpg",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie3.jpg",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie3.jpg",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie4.jpeg",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie4.jpeg",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie5.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie5.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie6.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie6.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie7.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie7.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie8.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie8.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie9.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie9.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie10.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie10.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie11.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie11.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie12.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie12.png",
     },
     {
       title: "Movie",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie13.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie13.png",
     },
     {
       title: "Movie 1",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie14.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie14.png",
     },
     {
       title: "Movie 1",
       releaseDate: "2023",
       imageSrc:
-        "https://krisnasantosa15.github.io/sineflix/MoviesOnProfile/movie15.png",
+        "https://krisnasantosa15.github.io/sineflix/img/MoviesOnProfile/movie15.png",
     },
   ];
   const moviesPerPage = 10;
